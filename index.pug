@@ -1,0 +1,289 @@
+doctype
+html(lang ="en")
+    head
+        meta(charset="utf-8")
+        meta(name="description" content="Description goes HERE")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        title Ignite Ismailia
+        link(rel="stylesheet" href="style/bootstrap.min.css")
+        link(rel="stylesheet" href="style/style.css")
+        link(rel="stylesheet" href="style/animate.css")
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+        link(href="https://fonts.googleapis.com/css2?family=Ubuntu&family=Yanone+Kaffeesatz:wght@600&family=Righteous&family=Raleway:wght@200;300&display=swap" rel="stylesheet")
+    body
+        section.start
+            div(class="spinner-border text-primary")
+        section.subscribe
+            form(class="cont container-sm" action="php/subscribe.php" method="POST")
+                i(class="fa fa-times") 
+                h3 subscribe
+                input(type="email" name="email" placeholder="Email" required) 
+                button(class="btn" id="submit-form") OK
+                
+        //- Fixed Bg
+        section(data-vide-bg="vidBg/background.mp4" class="fixedBg")
+       
+        aside.sidedNav
+            span#sideHome
+            span#sideAbout
+            span#sideTeam
+            span#sidedContact
+        aside.subMenu
+            .subMCont
+                ul
+                    li#sideSubHome Home
+                    li#sideSubAbout About
+                    li#sideSubTeam Team
+                    li#sideSubBlogs Blogs
+                    li#sideSubcontacts Contact
+                button(class="btn btn-outline-light" id="closeSubMenu") Close
+        section(class="massage" id="massage")
+            div(class="centerv")
+                h3 Massage
+                form(class="container-md" action="php/contact.php" method="POST")
+                    input(type="text" value="" placeholder="Name" name="contName" required data-validation-required-message="Please fill the required field.")
+                    input(type="email" value="" placeholder="Mail" name="contMail" required data-validation-required-message="Please fill the required field.")
+                    textarea(value="" placeholder="Message" name="contMessage" required data-validation-required-message="Please fill the required field.")
+                    br
+                    button(id="contSubmit") Send
+            button(class="btn btn-outline-light" id="closeMassageCont") Close
+        section.subscribe
+            form(class="cont container-sm" action="php/subscribe.php" method="POST")
+                i(class="fa fa-times") 
+                h3 subscribe
+                input(type="email" name="email" placeholder="Email" required) 
+                button(class="btn" id="submit-form") OK
+
+        section(class="sec1" id="home")
+            header.container-fluid
+                .container-sm
+                    img(src="img/logo.png" alt="Ignite ISMAILIA Logo" title="Ignite Ismailia")
+                    nav.mainNav
+                        span(id="homeMenu") Home
+                        span(id="aboutMenu") About
+                        span(id="teamMenu") Team
+                        span(id="blogs") Blogs
+                        span(id="contactMenu") Contact
+                    i(class="fa fa-bars")
+            .jumbotron
+                h5.tltFirst
+                    ul(class="texts")
+                        li(data-out-effect="bounceOut" data-in-effect="wobble") Non-profit organization
+                        li(data-in-effect="wobble" data-out-effect="bounceOut") EveryOne, Speak!
+                h3(class="animated bounce mainTitle") Ignite STEM Ismailia
+                hr
+                p(data-in-effect="wobble" class="pIn") Lorem ipsum dolor sit amet, consectetur
+                    | adipiscing elit. Proin venenatis porttitor lacus, non egestas leo feugiat in. In feugiat leo placerat, elementum nisl non, feugiat leo. Ut sapien velit, vulputate placerat.
+                hr
+                a(href="https://www.facebook.com/ignite.stem.ismailia/" target="_blank"): i(class="fa fa-facebook-square")
+                a(href="https://www.instagram.com/ignite_ismailia_stem/" target="_blank"): i(class="fa fa-instagram")
+                i(class="fa fa-bell")
+        section(class="sec2 container-fluid" id="about")
+            h3.headSec2 About
+            hr
+            div(class="row infoCont")
+                div(class="IgniteGene col-md")
+                    h5 Ignite
+                    p Lorem ipsum dolor sit amet, consectetur
+                        |adipiscing elit. Vestibulum bibendum
+                        |dolor vel risus placerat, non posuere
+                        |odio pharetra. Nulla ac libero placerat,
+                        | rutrum lectus a, facilisis tellus. Aliquam
+                        |varius tempor purus, vel placerat nisi pretium
+                        |a. Suspendisse mattis laoreet molestie. Donec
+                        |nisl felis, dapibus et vehicula at, blandit id
+                        |nibh. Class aptent taciti sociosqu ad litora
+                        |torquent per conubia nostra, per inceptos
+                        |himenaeos. Ut blandit odio non sem ultrices,
+                        |a iaculis elit commodo.
+                div(class="IgniteIsmailia col-md")
+                    h5 Ignite Ismailia
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        |Nunc mollis ex vitae purus finibus, ac consequat dui
+                        |pretium. Vivamus vitae mauris vulputate, volutpat sem et,
+                        |pulvinar neque. Praesent varius varius feugiat. Vestibulum
+                        |sollicitudin, lorem semper consectetur vehicula, sem nisi
+                        |maximus arcu, ut tempor justo metus sit amet ligula.
+                        |Fusce consequat ut urna id vestibulum. Duis tristique
+                        |aliquet erat, finibus porttitor ipsum consequat quis.
+                        |Maecenas viverra orci et tellus suscipit, eget
+                        |pulvinar ipsum tincidunt.
+        section(class="sec3 container-fluid" id="Team")
+            h3.headSec3 Team
+            h5 Who we are
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                | Pellentesque elementum neque diam, et congue risus dictum et.
+                | Nunc finibus efficitur.
+            .memCont
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Mahmoud-Yasser.jpg" alt="Mahmoud-Yasser" title="Mahmoud-Yasser")
+                    .showMemInfo
+                        h3 Mahmoud-Yasser
+                        p Chairman
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Ahmed-Abdelhady.jpg" alt="Ahmed-Abdelhady" title="Ahmed-Abdelhady")
+                    .showMemInfo
+                        h3 Ahmed-Abdelhady
+                        p Vice Chairman
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Hala-Ashraf.jpg" alt="Hala-Ashraf" title="Hala-Ashraf")
+                    .showMemInfo
+                        h3 Hala-Ashraf
+                        p Digital Marketing Chief
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Youssef-Mahmoud.jpg" alt="Youssef-Mahmoud" title="Youssef-Mahmoud")
+                    .showMemInfo
+                        h3 Youssef-Mahmoud
+                        p Multimedia Chief
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Ahmed-Sayed.jpg" alt="Ahmed Sayed" title="دحا اخوي")
+                    .showMemInfo
+                        h3 Ahmed Sayed
+                        p Director HR
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Salma-Ahmed.jpg" alt="Salma-Ahmed" title="Salma-Ahmed")
+                    .showMemInfo
+                        h3 Salma-Ahmed
+                        p Vice director HR
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Rewan Khaled.jpg" alt="Rewan-Khaled" title="Rewan-Khaled")
+                    .showMemInfo
+                        h3 Rewan-Khaled
+                        p Vice director HR
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Ahmed-Hassan.jpg" alt="Ahmed-Hassan" title="Ahmed-Hassan")
+                    .showMemInfo
+                        h3 Ahmed-Hassan
+                        p Director Tech. Support
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Zeyad-Ajamy.jpg" alt="Zeyad-Ajamy" title="Zeyad-Ajamy")
+                    .showMemInfo
+                        h3 Zeyad-Ajamy
+                        p Vice director Tech. Support 
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Mohmmed-Hamza.jpg" alt="Mohmmed-Hamza" title="Mohmmed-Hamza")
+                    .showMemInfo
+                        h3 Mohmmed-Hamza
+                        p Director PR
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Earny-Essam.jpg" alt="Ereny Essam" title="Ereny Essam")
+                    .showMemInfo
+                        h3 Ereny Essam
+                        p Vice Director PR
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Youssef-Bokhary.jpg" alt="Youssef-Bokhary" title="Youssef-Bokhary")
+                    .showMemInfo
+                        h3 Youssef-Bokhary
+                        p Content Writing director
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/me.png" alt="Mem Name" title="Mem Name")
+                    .showMemInfo
+                        h3 Member Name
+                        p Vice director Content Writing
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Ziad-Hammad.jpg" alt="Ziad-Hammad" title="Ziad-Hammad")
+                    .showMemInfo
+                        h3 Ziad-Hammad
+                        p Director Video Editing
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Lina Ahmed.jpg" alt="Lina Ahmed" title="Lina Ahmed")
+                    .showMemInfo
+                        h3 Lina Ahmed
+                        p Vice director Video Editing
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Mohammed Shaban.jpg" alt="Mohammed Shaban" title="Mohammed Shaban")
+                    .showMemInfo
+                        h3 Mohammed Shaban
+                        p Director FR
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Ibrahim-Rashwan.jpg" alt="Ibrahim Rashwan" title="Ibrahim Rashwan")
+                    .showMemInfo
+                        h3 Ibrahim Rashwan
+                        p Vice director FR
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Omar-Mostafa.jpg" alt="Omar-Mostafa" title="Omar-Mostafa")
+                    .showMemInfo
+                        h3 Omar-Mostafa
+                        p Director Social Media
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Youssef-Khaled.jpg" alt="Youssef-Khaled" title="Youssef-Khaled")
+                    .showMemInfo
+                        h3 Youssef-Khaled
+                        p Director Graphic Design
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Khalid-Saber.jpg" alt="Khalid-Saber" title="Khalid-Saber")
+                    .showMemInfo
+                        h3 Khalid-Saber
+                        p Vice director Graphic Design
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Mohammed-Morsy.jpeg" alt="Mohammed-Morsy" title="Mohammed-Morsy")
+                    .showMemInfo
+                        h3 Mohammed-Morsy
+                        p Vice director Social Media
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Mohamed-Ayman.jpg" alt="Mohamed-Ayman" title="Mohamed-Ayman")
+                    .showMemInfo
+                        h3 Mohamed-Ayman
+                        p Director Logistics
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Nour-El-baz.jpg" alt="Nour-El-baz" title="Nour-El-baz")
+                    .showMemInfo
+                        h3 Nour-El-baz
+                        p Vice director Logistics
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Renad-Wael.jpg" alt="Renad Wael" title="Renad Wael")
+                    .showMemInfo
+                        h3 Renad Wael
+                        p Vice director Logistics
+                .memInfo
+                    .card
+                        img(class="card-img-top" src="img/Renad-Ehab.jpg" alt="Renad Ehad" title="Renad Ehad")
+                    .showMemInfo
+                        h3 Renad Ehad
+                        p Vice director Logistics
+
+
+        section(class="sec4 container-fluid" id="contact")
+            div(class="all")
+                div(class="social")
+                    a(href="#"): i(class="fa fa-facebook")
+                    a(href="#"): i(class="fa fa-instagram")
+                    a(href="mailto: Info@ignite-stemismailia.com"): i(class="fa fa-envelope-o")
+                    a(href="tel: +2 (011) 121-61029"): i(class="fa fa-phone")
+                span#massageUs | Message Us 
+                h5 Ignite-STEM Ismailia &copy; 2020
+ 
+        button(class="btn btn-danger" id="toTop"): i(class="fa fa-chevron-up")
+
+        script(src="js/jquery.js")
+        script(src="js/jquery.vide.min.js")
+        script(src="js/jquery.anisview.min.js")
+        script(src="js/jquery.lettering.js")
+        script(src="js/jquery.textillate.js")
+        script(src="js/jquery.nicescroll.js")
+        script(src="js/bootstrap.bundle.min.js")
+        script(src="js/mainJs.js")

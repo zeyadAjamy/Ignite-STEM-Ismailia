@@ -1,0 +1,641 @@
+/*  ------------ Fonts:
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-family: 'Raleway', sans-serif;
+*/
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.start {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: white;
+  z-index: 2250;
+}
+.start .spinner-border {
+  position: absolute;
+  top: 48%;
+  left: 48%;
+}
+
+.subscribe {
+  width: 100%;
+  height: 0;
+  position: fixed;
+  background-color: rgba(7, 7, 7, 0.863);
+  z-index: 2220;
+}
+.subscribe .cont {
+  height: fit-content;
+  background-color: #0f0f0f;
+  border-radius: 5px;
+  padding: 10% 0 10% 0;
+  display: none;
+}
+.subscribe .cont i {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: rgba(255, 255, 255, 0.651);
+  cursor: pointer;
+  transition: all 1s ease;
+  font-size: 20px;
+}
+.subscribe .cont i:hover {
+  color: white;
+}
+.subscribe .cont h3 {
+  color: #dbab83;
+  text-align: center;
+  font-size: 4vmin;
+  margin-top: 10px;
+}
+.subscribe .cont input {
+  width: 90%;
+  height: 40px;
+  display: block;
+  margin: auto;
+  background-color: transparent;
+  border: 1px solid #dbab83;
+  color: white;
+  padding: 10px;
+}
+.subscribe .cont .btn {
+  border: 1px solid #dbab83;
+  border-radius: 0;
+  margin: auto;
+  display: block;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.89);
+}
+
+.fixedBg {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 0;
+}
+
+.massage {
+  width: 100%;
+  height: 0;
+  background-color: #0f0f0f;
+  position: fixed;
+  top: 0;
+  z-index: 2220;
+}
+.massage .centerv {
+  display: none;
+}
+.massage .centerv h3 {
+  text-align: center;
+  color: #dbab83;
+}
+.massage .centerv input {
+  width: 48%;
+  margin: 0.5%;
+}
+.massage .centerv textarea {
+  width: 98%;
+  height: 200px;
+  margin: 0.5%;
+  margin-top: 2%;
+  resize: none;
+}
+.massage .centerv button {
+  width: 30%;
+  text-align: center;
+  margin: 0.5%;
+  margin-top: 1%;
+  transition: all 0.5s ease-in-out;
+}
+.massage .centerv button:hover {
+  background-color: rgba(255, 255, 255, 0.815);
+  color: #0f0f0f;
+}
+.massage #closeMassageCont {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+
+.sidedNav {
+  position: fixed;
+  top: 54px;
+  left: 0px;
+  width: 18px;
+  border-right: 0.5px solid rgba(219, 171, 131, 0.356);
+  height: 100vh;
+  background-color: #0f0f0f;
+  z-index: 2200;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sidedNav span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #dbab83;
+  display: block;
+  margin: 6px 0 6px 6px;
+  cursor: pointer;
+}
+
+.circleNav {
+  animation: hideIn 0.5s ease forwards;
+}
+
+.subMenu {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  display: none;
+}
+.subMenu .subMCont {
+  position: fixed;
+  left: 0px;
+  width: 20%;
+  height: 100%;
+  background-color: black;
+  color: rgba(255, 255, 255, 0.692);
+}
+.subMenu .subMCont ul {
+  position: absolute;
+  top: 25%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 100%;
+  text-align: center;
+  justify-content: space-around;
+  padding: 0;
+}
+.subMenu .subMCont ul li {
+  font-size: 3.5vmin;
+  cursor: pointer;
+  padding: 10px;
+  transition: color ease;
+}
+.subMenu .subMCont ul li:hover {
+  margin-left: 30px;
+  color: #dbab83;
+  animation: subMenu 0.5s ease-in 0s forwards;
+}
+.subMenu button {
+  position: fixed;
+  left: 0px;
+  bottom: 20px;
+  border-radius: 0;
+  width: 20%;
+  color: #dbab83;
+  border-color: #dbab83;
+  display: none;
+}
+
+.sec1 {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+.sec1 header {
+  height: auto;
+  background-color: #0f0f0f;
+  border-bottom: 0.5px solid rgba(219, 171, 131, 0.356);
+  z-index: 1000;
+}
+.sec1 header img {
+  width: 90px;
+  margin: 5px 0 5px 0px;
+}
+.sec1 header nav {
+  float: right;
+  margin: 18px 0px 10px 0px;
+  color: rgba(255, 255, 255, 0.863);
+  width: 300px;
+  display: flex;
+  font-size: 14px;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+}
+.sec1 header nav .subScrib {
+  margin-left: 20px;
+}
+.sec1 header nav span {
+  cursor: pointer;
+  width: 0px;
+  border-bottom: 1px solid #dbab83;
+  transition: 0.5s width ease-in-out;
+}
+.sec1 header nav span:hover {
+  width: 30px;
+}
+.sec1 header .fa-bars {
+  position: absolute;
+  right: 50px;
+  top: 17px;
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.733);
+  cursor: pointer;
+}
+.sec1 header .fa-bars:hover {
+  color: white;
+}
+.sec1 .jumbotron {
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  margin-top: 50px;
+  z-index: 100;
+}
+.sec1 .jumbotron .tltFirst {
+  text-align: center;
+  font-family: "Righteous", cursive;
+  margin-bottom: -5px;
+  color: #d80909;
+  font-size: 4vmin;
+}
+.sec1 .jumbotron h3 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 13vmin;
+  font-weight: bold;
+  color: white;
+  margin: 0 10px 0 10px;
+}
+.sec1 .jumbotron p {
+  color: whitesmoke;
+  font-size: 13px;
+  width: 80%;
+  margin: auto;
+}
+.sec1 .jumbotron p:hover {
+  animation: fontTrick 1s forwards;
+}
+.sec1 .jumbotron hr {
+  width: 40%;
+}
+.sec1 .jumbotron .fa {
+  margin: 0px 10px 0px 5px;
+  padding: 6px;
+  border-radius: 5px;
+  font-size: 3vmin;
+  color: rgba(216, 9, 9, 0.65);
+  transition: 0.2s color ease-in;
+  cursor: pointer;
+}
+.sec1 .jumbotron .fa:hover {
+  color: #d80909;
+}
+.sec1 .jumbotron .fa-instagram {
+  margin: 0px;
+}
+
+.sec2 {
+  position: relative;
+  height: auto;
+  background-color: #0f0f0f;
+  padding-bottom: 40px;
+}
+.sec2 h3 {
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 10vmin;
+  text-align: center;
+  padding-top: 20px;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
+}
+.sec2 hr {
+  width: 10%;
+  border: none;
+  height: 1px;
+  border-radius: 5px;
+  background-color: #dbab83;
+  margin: auto;
+}
+.sec2 .infoCont {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 40px;
+}
+.sec2 .infoCont .IgniteGene, .sec2 .infoCont .IgniteIsmailia {
+  transition: border 0.5s linear;
+  margin: 15px;
+  margin-left: 40px;
+  text-align: start;
+  padding: 10px;
+  border: 1px solid whitesmoke;
+  color: rgba(255, 255, 255, 0.4);
+}
+.sec2 .infoCont .IgniteGene:hover, .sec2 .infoCont .IgniteIsmailia:hover {
+  border: 1.5px solid #dbab83;
+}
+.sec2 .infoCont .IgniteGene:hover p, .sec2 .infoCont .IgniteIsmailia:hover p {
+  color: rgba(255, 255, 255, 0.9);
+}
+.sec2 .infoCont .IgniteGene:hover h5, .sec2 .infoCont .IgniteIsmailia:hover h5 {
+  color: #dbab83;
+}
+.sec2 .infoCont .IgniteGene h5, .sec2 .infoCont .IgniteIsmailia h5 {
+  color: rgba(219, 171, 131, 0.8);
+  transition: color 1s linear;
+  text-align: center;
+}
+.sec2 .infoCont .IgniteGene p, .sec2 .infoCont .IgniteIsmailia p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  transition: color 0.5s linear;
+}
+
+.sec3 {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(15, 15, 15, 0.8);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.918);
+}
+.sec3 h3 {
+  font-size: 10vmin;
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
+}
+.sec3 h5 {
+  margin-top: -17px;
+  font-size: 2.5vmin;
+  color: #dbab83;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+}
+.sec3 p {
+  width: 80%;
+  font-size: 13px;
+  margin: auto;
+}
+.sec3 .memCont {
+  width: 100%;
+  height: 80%;
+}
+.sec3 .memCont .memInfo {
+  width: min-content;
+  height: min-content;
+  margin: auto;
+  margin-top: 20px;
+  position: relative;
+  display: inline-block;
+}
+.sec3 .memCont .memInfo .card {
+  background-color: transparent;
+  width: 30vmin;
+  height: auto;
+  margin: 10px;
+  display: inline-block;
+  height: auto;
+}
+.sec3 .memCont .memInfo .card img {
+  filter: grayscale(1);
+}
+.sec3 .memCont .memInfo .card img:hover {
+  filter: grayscale(0);
+}
+.sec3 .memCont .memInfo h3 {
+  font-size: 3vmin;
+  margin-bottom: 20px;
+}
+.sec3 .memCont .memInfo:hover .showMemInfo {
+  animation: MemHeight 1.5s forwards;
+}
+.sec3 .memCont .memInfo:hover .showMemInfo h3, .sec3 .memCont .memInfo:hover .showMemInfo p {
+  animation: showMemInfo 4s ease-in;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-delay: 1.5s;
+}
+.sec3 .memCont .showMemInfo {
+  position: absolute;
+  top: 0;
+  height: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: #7c0303;
+}
+.sec3 .memCont .showMemInfo h3 {
+  font-size: 4vmin;
+  margin-top: 30%;
+  visibility: hidden;
+}
+.sec3 .memCont .showMemInfo p {
+  color: #dbab83;
+  font-size: 12px;
+  visibility: hidden;
+}
+
+.sec4 {
+  position: relative;
+  height: 65px;
+  z-index: 2000;
+  background-color: #0f0f0f;
+  padding: 20px 0 20px 0;
+  margin: 0;
+  font-size: 3vmin;
+  border-top: 1px solid rgba(219, 171, 131, 0.356);
+}
+.sec4 .all {
+  width: 90%;
+  margin: 0px 5% 0px 5%;
+}
+.sec4 .all .social {
+  display: inline-block;
+  text-align: start;
+  margin: 0;
+}
+.sec4 .all .social .fa {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 4px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.sec4 .all .social .fa:hover {
+  color: white;
+}
+.sec4 .all span {
+  color: #dbab83;
+  cursor: pointer;
+}
+.sec4 .all h5 {
+  float: right;
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.5s ease;
+}
+.sec4 .all h5:hover {
+  color: white;
+  animation: vibration 1s forwards;
+}
+
+#toTop {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  border-radius: 50%;
+  z-index: 1000;
+  width: 40px;
+  height: 40px;
+  background-color: #d80909;
+  border: none;
+  display: none;
+  transition: 0.2s background-color ease-in;
+}
+#toTop:hover {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+@media only screen and (max-width: 600px) {
+  .mainNav {
+    visibility: hidden;
+  }
+
+  .fa-bars {
+    visibility: visible;
+  }
+
+  .centerv {
+    width: 100%;
+  }
+
+  .sec4 span {
+    font-size: 3vmin;
+  }
+  .sec4 .fa {
+    font-size: 3vmin;
+  }
+  .sec4 h5 {
+    font-size: 3vmin;
+  }
+
+  .sec1 .jumbotron .fa {
+    font-size: 4vmin;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .mainNav {
+    visibility: visible;
+  }
+
+  .fa-bars {
+    visibility: hidden;
+  }
+
+  .centerv {
+    width: 50%;
+  }
+
+  .sec4 span {
+    font-size: 2.5vmin;
+  }
+  .sec4 .fa {
+    font-size: 2.5vmin;
+  }
+  .sec4 h5 {
+    font-size: 2.5vmin;
+  }
+
+  .cont {
+    width: 50%;
+  }
+}
+@keyframes toAbout {
+  from {
+    bottom: 3%;
+  }
+  to {
+    bottom: 1%;
+  }
+  from {
+    bottom: 1%;
+  }
+  to {
+    bottom: 3%;
+  }
+}
+@keyframes subMenu {
+  0% {
+    margin-left: 30px;
+  }
+  60% {
+    margin-left: -30px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+@keyframes MemHeight {
+  30% {
+    height: 60%;
+  }
+  70% {
+    height: 40%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes showMemInfo {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
+@keyframes fontTrick {
+  0% {
+    font-size: 13px;
+  }
+  60% {
+    font-size: 10px;
+  }
+  100% {
+    font-size: 13px;
+  }
+}
+@keyframes hideIn {
+  100% {
+    background-color: transparent;
+    border: 1px solid #dbab83;
+    width: 8px;
+    height: 8px;
+    margin-left: 5px;
+  }
+}
+.subscribe .cont, .massage .centerv, .sec1 .jumbotron {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.massage .centerv input, .massage .centerv textarea, .massage .centerv button {
+  background-color: transparent;
+  border: 0.5px solid #dbab83;
+  padding: 6px;
+  color: whitesmoke;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+}
+
+/*# sourceMappingURL=style.css.map */

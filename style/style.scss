@@ -1,0 +1,601 @@
+/*  ------------ Fonts:
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-family: 'Raleway', sans-serif;
+*/
+$colorBack: rgb(15, 15, 15);
+$IcoColor: rgb(219, 171, 131);
+$red: rgb(216, 9, 9);
+
+@mixin whp($p){
+    width: 100%;
+    height: 100vh;
+    position: $p;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.start{
+   @include whp(fixed);
+    background-color: white;
+    z-index: 2250;
+    .spinner-border{
+        position: absolute;
+        top: 48%;
+        left: 48%;
+    }
+}
+
+.subscribe{
+    width: 100%;
+    height: 0;
+    position: fixed;
+    background-color: rgba(7, 7, 7, 0.863);
+    z-index: 2220;
+    .cont{
+        @extend %centerHV;
+       // width: 50%;
+        height: fit-content;
+        background-color: $colorBack;
+        border-radius: 5px;
+        padding: 10% 0 10% 0;
+        display: none;
+        i{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: rgba(255, 255, 255, 0.651);
+            cursor: pointer;
+            transition: all 1s ease;
+            font-size: 20px;
+            &:hover{
+                color: rgb(255, 255, 255);
+            }
+        }
+        h3{
+            color: $IcoColor;
+            text-align: center;
+            font-size: 4vmin;
+            margin-top: 10px;
+        }
+        input{
+            width: 90%;
+            height: 40px;
+            display: block;
+            margin: auto;
+            background-color: transparent;
+            border: 1px solid $IcoColor;
+            color: white;
+            padding: 10px;
+        }
+        .btn{
+            border: 1px solid $IcoColor;
+            border-radius: 0;
+            margin: auto;
+            display: block;
+            margin-top: 10px;
+            color: rgba(255, 255, 255, 0.89);
+        }
+    }
+}
+// Vide BG
+.fixedBg{
+    @include whp(fixed);
+    z-index: 0;
+}
+
+.massage{
+    width: 100%;
+    height: 0;
+    background-color: $colorBack;
+    position: fixed;
+    top: 0;
+    z-index: 2220;
+    .centerv{
+        @extend %centerHV;
+        display: none;
+        h3{
+            text-align: center;
+            color: $IcoColor;
+        }
+        input{
+            width: 48%;
+            margin: 0.5%;
+            @extend %form
+        }
+        textarea{
+            width: 98%;
+            height: 200px;
+            margin: 0.5%;
+            margin-top: 2%;
+            @extend %form;
+            resize: none;
+        }
+        button{
+            width: 30%;
+            text-align: center;
+            margin: 0.5%;
+            margin-top: 1%;
+            @extend %form;
+            transition: all 0.5s ease-in-out;
+            &:hover{
+                background-color: rgba(255, 255, 255, 0.815);
+                color: $colorBack;
+            }
+        }
+
+    }
+    #closeMassageCont{
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+    }
+}
+
+.sidedNav{
+    position: fixed;
+    top: 54px;
+    left: 0px;
+    width: 18px;
+    border-right: 0.5px solid rgba(219, 171, 131, 0.356);
+    height: 100vh;
+    background-color: $colorBack;
+    z-index: 2200;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    span{
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $IcoColor;
+        display: block;
+        margin:6px 0 6px 6px;
+        cursor: pointer;
+    }
+}
+.circleNav{
+    animation: hideIn 0.5s ease forwards;
+}
+.subMenu{
+    @include whp(fixed);
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    display: none;
+    .subMCont{
+        position: fixed;
+        left: 0px;
+        width: 20%;
+        height: 100%;
+        background-color: rgb(0, 0, 0);
+        color: rgba(255, 255, 255, 0.692);
+        ul{
+            position: absolute;
+            top: 25%;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            height: 50%;
+            width: 100%;
+            text-align: center;
+            justify-content: space-around;
+            padding: 0;
+            li{
+                font-size: 3.5vmin;
+                cursor: pointer;
+                padding: 10px;
+                transition: color ease;
+                &:hover{
+                    margin-left: 30px;
+                    color: $IcoColor;
+                    animation: subMenu 0.5s ease-in 0s forwards;
+                }
+            }
+        }
+    }
+    button{
+        position: fixed;
+        left: 0px;
+        bottom: 20px;
+        border-radius: 0;
+        width: 20%;
+        color: $IcoColor;
+        border-color: $IcoColor;
+        display: none;
+    }
+}
+//Site Parts 
+.sec1{
+    @include whp(relative);
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    header{
+        height: auto;
+        background-color: $colorBack;
+        border-bottom: 0.5px solid rgba(219, 171, 131, 0.356);
+        z-index: 1000;
+        img{
+            width: 90px;
+            margin: 5px 0 5px 0px;
+        }
+        nav{
+            float: right;
+            margin: 18px 0px 10px 0px;
+            color: rgba(255, 255, 255, 0.863);
+            width: 300px;
+            display: flex;
+            font-size: 14px;
+            justify-content: space-evenly;
+            flex-wrap: nowrap;
+            .subScrib{
+                margin-left: 20px;
+            }
+            span{
+                cursor: pointer;
+                width: 0px;
+                border-bottom: 1px solid $IcoColor;
+                transition: 0.5s width ease-in-out;
+                &:hover{
+                    width: 30px;
+                }
+            }
+        }
+        .fa-bars{
+            position: absolute;
+            right: 50px;
+            top: 17px;
+            font-size: 25px;
+            color: rgba(255, 255, 255, 0.733);
+            cursor: pointer;
+            &:hover{
+                color: rgba(255, 255, 255);
+            }
+        }
+    }
+    .jumbotron{
+        width: 100%;
+        text-align: center;
+        background-color: transparent;
+        @extend %centerHV;
+        margin-top: 50px;
+        z-index: 100;
+        .tltFirst{
+            text-align: center;
+            font-family: 'Righteous', cursive;
+            margin-bottom: -5px;
+            color: rgb(216, 9, 9);
+            font-size: 4vmin;
+        }
+        h3{
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 13vmin;
+            font-weight: bold;
+            color: white;
+            margin: 0 10px 0 10px
+        }
+        p{
+            color: whitesmoke;
+            font-size: 13px;
+            width: 80%;
+            margin: auto;
+            &:hover{
+                animation: fontTrick 1s forwards;
+            }
+        }
+        hr{
+            width: 40%;
+        }
+        .fa{
+            margin: 0px 10px 0px 5px;
+            padding: 6px;
+            border-radius: 5px;
+            font-size: 3vmin;
+            color: rgba(216, 9, 9, 0.65);
+            transition: 0.2s color ease-in;
+            cursor: pointer;
+            &:hover{
+                color: $red;
+            }
+        }
+        .fa-instagram{
+            margin: 0px;
+        }
+    }
+}
+.sec2{
+    position: relative;
+    height: auto;
+    background-color: rgb(15, 15, 15);
+    padding-bottom: 40px;
+    h3{
+        color: rgba(255, 255, 255, 0.87);
+        font-size: 10vmin;
+        text-align: center;
+        padding-top: 20px;
+        margin: 0;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 200;
+    }
+    hr{
+        width: 10%;
+        border: none;
+        height: 1px;
+        border-radius: 5px;
+        background-color: $IcoColor;
+        margin: auto;
+    }
+    .infoCont{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 40px;
+        .IgniteGene, .IgniteIsmailia{
+            transition: border 0.5s linear;
+            &:hover{
+                border: 1.5px solid $IcoColor;
+                p {
+                    color: rgba(255, 255, 255, 0.9);
+                }
+                h5{
+                    color: rgb(219, 171, 131);
+
+                }
+            }
+            h5{
+                color: rgba(219, 171, 131, 0.8);
+                transition: color 1s linear;
+                text-align: center;
+            }
+            p{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 15px;
+                transition: color 0.5s linear;
+
+            }
+            margin: 15px;
+            margin-left: 40px;
+            text-align: start;
+            padding: 10px;
+            border: 1px solid whitesmoke;
+            color: rgba(255, 255, 255, 0.4);
+        }
+    }
+}
+.sec3{
+    @include whp(relative);
+    background-color: rgba(15, 15, 15, 0.8);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.918);
+    h3{
+        font-size: 10vmin;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 200;
+    }
+    h5{
+        margin-top: -17px;
+        font-size: 2.5vmin;
+        color: $IcoColor;
+        font-family: 'Yanone Kaffeesatz', sans-serif
+    }
+    p{
+        width: 80%;
+        font-size: 13px;
+        margin: auto;
+    }
+    .memCont{
+        width: 100%;
+        height: 80%;
+        .memInfo{
+            width: min-content;
+            height: min-content;
+            margin: auto;
+            margin-top: 20px;
+            position: relative;
+            display: inline-block;
+            .card{
+                background-color: transparent;
+                width: 30vmin;
+                height: auto;
+                margin: 10px;
+                display: inline-block;
+                height: auto;
+                img{
+                    filter: grayscale(1);
+                    &:hover{
+                        filter: grayscale(0);
+                    }
+                }
+                }
+                h3{
+                    font-size: 3vmin;
+                    margin-bottom: 20px;
+                }
+                &:hover{
+                    .showMemInfo{
+                        animation: MemHeight 1.5s forwards;
+                        h3, p{animation: showMemInfo 4s ease-in; animation-timing-function: ease-in; animation-fill-mode: forwards; animation-delay: 1.5s;}
+                    }
+                }
+            }
+            .showMemInfo{
+                position: absolute;
+                top: 0;
+                height: 0;
+                width: 100%;
+                z-index: 10;
+                background-color: rgb(124, 3, 3);
+                h3{
+                    font-size: 4vmin;
+                    margin-top: 30%;
+                    visibility: hidden
+                }
+                p{
+                    color: $IcoColor;
+                    font-size: 12px;
+                    visibility: hidden
+                }
+            }
+    }
+}
+.sec4{
+    position: relative;
+    height: 65px; 
+    z-index: 2000;
+    background-color: rgb(15, 15, 15);
+    padding: 20px 0 20px 0;
+    margin: 0;
+    font-size: 3vmin;
+    border-top: 1px solid rgba(219, 171, 131, 0.356);
+    .all{
+        width: 90%;
+        margin: 0px 5% 0px 5%;
+        .social{
+            display: inline-block;
+            text-align: start;
+            margin: 0;
+            .fa{
+                color: rgba(255, 255, 255, 0.6);
+                margin: 4px;
+                transition: all 0.5s ease;
+                cursor: pointer;
+                &:hover{
+                    color: white;
+                }
+            }
+        }
+        span{
+            color: $IcoColor; 
+            cursor: pointer;
+        }
+        h5{
+            float: right;
+            margin-top: 3px;
+            color: rgba(255, 255, 255, 0.6);
+            transition: all 0.5s ease;
+            &:hover{
+                color: white;
+                animation: vibration 1s forwards;
+            } 
+        }
+    }
+}
+
+#toTop{
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    border-radius: 50%;
+    z-index: 1000;
+    width: 40px;
+    height: 40px;
+    background-color: $red;
+    border: none;
+    display: none;
+    transition: 0.2s background-color ease-in;
+    &:hover{
+        background-color: rgba(255, 0, 0, 0.7);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .mainNav{
+        visibility: hidden;
+    }
+    .fa-bars{
+        visibility: visible;
+    }
+    .centerv{
+        width: 100%;
+    }
+    .sec4 {
+        span{
+            font-size: 3vmin;
+        }
+        .fa{
+            font-size: 3vmin;
+        }
+        h5{
+            font-size: 3vmin;
+        }
+    }
+    .sec1 .jumbotron .fa {
+        font-size: 4vmin;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .mainNav{
+        visibility: visible;
+    }
+    .fa-bars{
+        visibility: hidden;
+    }
+    .centerv{
+        width: 50%;
+    }
+    .sec4 {
+        span{
+            font-size: 2.5vmin;
+        }
+        .fa{
+            font-size: 2.5vmin;
+        }
+        h5{
+            font-size: 2.5vmin;
+        }
+    }
+    .cont{
+        width: 50%;
+    }
+}
+@keyframes toAbout {
+    from{bottom: 3%}
+    to{bottom: 1%}
+    from{bottom: 1%}
+    to{bottom: 3%}
+}
+@keyframes subMenu {
+    0%{margin-left: 30px}
+    60%{margin-left: -30px}
+    100%{margin-left: 0px}
+}
+@keyframes MemHeight {
+    30%{height: 60%}
+    70%{height: 40%}
+    100%{height: 100%}
+}
+@keyframes showMemInfo {
+    from{visibility: hidden}
+    to{visibility: visible}
+
+}
+@keyframes fontTrick {
+    0%{font-size: 13px;}
+    60%{font-size: 10px;}
+    100%{font-size: 13px;}
+}
+@keyframes hideIn {
+    100%{background-color: transparent; border: 1px solid $IcoColor; width: 8px; height: 8px; margin-left: 5px;}
+}
+
+%centerHV{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+%form{
+    background-color: transparent;
+    border: 0.5px solid $IcoColor;
+    padding: 6px;
+    color: whitesmoke;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+}

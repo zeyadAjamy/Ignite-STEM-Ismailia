@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Description goes HERE">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Ignite Ismailia</title>
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/animate.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&amp;family=Yanone+Kaffeesatz:wght@600&amp;family=Righteous&amp;family=Raleway:wght@200;300&amp;display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <section class="start">
+      <div class="spinner-border text-primary"></div>
+    </section>
+    <section class="subscribe">
+      <form class="cont container-sm" action="php/subscribe.php" method="POST"><i class="fa fa-times"> </i>
+        <h3>subscribe</h3>
+        <input type="email" name="email" placeholder="Email" required>
+        <button class="btn" id="submit-form">OK</button>
+      </form>
+    </section>
+    <section class="fixedBg" data-vide-bg="vidBg/background.mp4"></section>
+    <aside class="sidedNav"><span id="sideHome"></span><span id="sideAbout"></span><span id="sideTeam"></span><span id="sidedContact"></span></aside>
+    <aside class="subMenu">
+      <div class="subMCont">
+        <ul>
+          <li id="sideSubHome">Home</li>
+          <li id="sideSubAbout">About</li>
+          <li id="sideSubTeam">Team</li>
+          <li id="sideSubBlogs">Blogs</li>
+          <li id="sideSubcontacts">Contact</li>
+        </ul>
+        <button class="btn btn-outline-light" id="closeSubMenu">Close</button>
+      </div>
+    </aside>
+    <section class="massage" id="massage">
+      <div class="centerv">
+        <h3>Massage</h3>
+        <form class="container-md" action="php/contact.php" method="POST">
+          <input type="text" value="" placeholder="Name" name="contName" required data-validation-required-message="Please fill the required field.">
+          <input type="email" value="" placeholder="Mail" name="contMail" required data-validation-required-message="Please fill the required field.">
+          <textarea value="" placeholder="Message" name="contMessage" required data-validation-required-message="Please fill the required field."></textarea><br>
+          <button id="contSubmit">Send</button>
+        </form>
+      </div>
+      <button class="btn btn-outline-light" id="closeMassageCont">Close</button>
+    </section>
+    <section class="subscribe">
+      <form class="cont container-sm" action="php/subscribe.php" method="POST"><i class="fa fa-times"> </i>
+        <h3>subscribe</h3>
+        <input type="email" name="email" placeholder="Email" required>
+        <button class="btn" id="submit-form">OK</button>
+      </form>
+    </section>
+    <section class="sec1" id="home">
+      <header class="container-fluid">
+        <div class="container-sm"><img src="img/logo.png" alt="Ignite ISMAILIA Logo" title="Ignite Ismailia">
+          <nav class="mainNav"><span id="homeMenu">Home</span><span id="aboutMenu">About</span><span id="teamMenu">Team</span><span id="blogs">Blogs</span><span id="contactMenu">Contact</span></nav><i class="fa fa-bars"></i>
+        </div>
+      </header>
+      <div class="jumbotron">
+        <h5 class="tltFirst">
+          <ul class="texts">
+            <li data-out-effect="bounceOut" data-in-effect="wobble">Non-profit organization</li>
+            <li data-in-effect="wobble" data-out-effect="bounceOut">EveryOne, Speak!</li>
+          </ul>
+        </h5>
+        <h3 class="animated bounce mainTitle">Ignite STEM Ismailia</h3>
+        <hr>
+        <p class="pIn" data-in-effect="wobble">
+          Lorem ipsum dolor sit amet, consecteturadipiscing elit. Proin venenatis porttitor lacus, non egestas leo feugiat in. In feugiat leo placerat, elementum nisl non, feugiat leo. Ut sapien velit, vulputate placerat.</p>
+        <hr><a href="https://www.facebook.com/ignite.stem.ismailia/" target="_blank"><i class="fa fa-facebook-square"></i></a><a href="https://www.instagram.com/ignite_ismailia_stem/" target="_blank"><i class="fa fa-instagram"></i></a><i class="fa fa-bell"></i>
+      </div>
+    </section>
+    <section class="sec2 container-fluid" id="about">
+      <h3 class="headSec2">About</h3>
+      <hr>
+      <div class="row infoCont">
+        <div class="IgniteGene col-md">
+          <h5>Ignite</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consecteturadipiscing elit. Vestibulum bibendum
+            dolor vel risus placerat, non posuere
+            odio pharetra. Nulla ac libero placerat,
+            rutrum lectus a, facilisis tellus. Aliquam
+            varius tempor purus, vel placerat nisi pretium
+            a. Suspendisse mattis laoreet molestie. Donec
+            nisl felis, dapibus et vehicula at, blandit id
+            nibh. Class aptent taciti sociosqu ad litora
+            torquent per conubia nostra, per inceptos
+            himenaeos. Ut blandit odio non sem ultrices,
+            a iaculis elit commodo.
+          </p>
+        </div>
+        <div class="IgniteIsmailia col-md">
+          <h5>Ignite Ismailia</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nunc mollis ex vitae purus finibus, ac consequat dui
+            pretium. Vivamus vitae mauris vulputate, volutpat sem et,
+            pulvinar neque. Praesent varius varius feugiat. Vestibulum
+            sollicitudin, lorem semper consectetur vehicula, sem nisi
+            maximus arcu, ut tempor justo metus sit amet ligula.
+            Fusce consequat ut urna id vestibulum. Duis tristique
+            aliquet erat, finibus porttitor ipsum consequat quis.
+            Maecenas viverra orci et tellus suscipit, eget
+            pulvinar ipsum tincidunt.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="sec3 container-fluid" id="Team">
+      <h3 class="headSec3">Team</h3>
+      <h5>Who we are</h5>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.Pellentesque elementum neque diam, et congue risus dictum et.
+        Nunc finibus efficitur.
+      </p>
+      <div class="memCont">
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Mahmoud-Yasser.jpg" alt="Mahmoud-Yasser" title="Mahmoud-Yasser"></div>
+          <div class="showMemInfo">
+            <h3>Mahmoud-Yasser</h3>
+            <p>Chairman</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Ahmed-Abdelhady.jpg" alt="Ahmed-Abdelhady" title="Ahmed-Abdelhady"></div>
+          <div class="showMemInfo">
+            <h3>Ahmed-Abdelhady</h3>
+            <p>Vice Chairman</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Hala-Ashraf.jpg" alt="Hala-Ashraf" title="Hala-Ashraf"></div>
+          <div class="showMemInfo">
+            <h3>Hala-Ashraf</h3>
+            <p>Digital Marketing Chief</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Youssef-Mahmoud.jpg" alt="Youssef-Mahmoud" title="Youssef-Mahmoud"></div>
+          <div class="showMemInfo">
+            <h3>Youssef-Mahmoud</h3>
+            <p>Multimedia Chief</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Ahmed-Sayed.jpg" alt="Ahmed Sayed" title="دحا اخوي"></div>
+          <div class="showMemInfo">
+            <h3>Ahmed Sayed</h3>
+            <p>Director HR</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Salma-Ahmed.jpg" alt="Salma-Ahmed" title="Salma-Ahmed"></div>
+          <div class="showMemInfo">
+            <h3>Salma-Ahmed</h3>
+            <p>Vice director HR</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Rewan Khaled.jpg" alt="Rewan-Khaled" title="Rewan-Khaled"></div>
+          <div class="showMemInfo">
+            <h3>Rewan-Khaled</h3>
+            <p>Vice director HR</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Ahmed-Hassan.jpg" alt="Ahmed-Hassan" title="Ahmed-Hassan"></div>
+          <div class="showMemInfo">
+            <h3>Ahmed-Hassan</h3>
+            <p>Director Tech. Support</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Zeyad-Ajamy.jpg" alt="Zeyad-Ajamy" title="Zeyad-Ajamy"></div>
+          <div class="showMemInfo">
+            <h3>Zeyad-Ajamy</h3>
+            <p>Vice director Tech. Support </p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Mohmmed-Hamza.jpg" alt="Mohmmed-Hamza" title="Mohmmed-Hamza"></div>
+          <div class="showMemInfo">
+            <h3>Mohmmed-Hamza</h3>
+            <p>Director PR</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Earny-Essam.jpg" alt="Ereny Essam" title="Ereny Essam"></div>
+          <div class="showMemInfo">
+            <h3>Ereny Essam</h3>
+            <p>Vice Director PR</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Youssef-Bokhary.jpg" alt="Youssef-Bokhary" title="Youssef-Bokhary"></div>
+          <div class="showMemInfo">
+            <h3>Youssef-Bokhary</h3>
+            <p>Content Writing director</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/me.png" alt="Mem Name" title="Mem Name"></div>
+          <div class="showMemInfo">
+            <h3>Member Name</h3>
+            <p>Vice director Content Writing</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Ziad-Hammad.jpg" alt="Ziad-Hammad" title="Ziad-Hammad"></div>
+          <div class="showMemInfo">
+            <h3>Ziad-Hammad</h3>
+            <p>Director Video Editing</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Lina Ahmed.jpg" alt="Lina Ahmed" title="Lina Ahmed"></div>
+          <div class="showMemInfo">
+            <h3>Lina Ahmed</h3>
+            <p>Vice director Video Editing</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Mohammed Shaban.jpg" alt="Mohammed Shaban" title="Mohammed Shaban"></div>
+          <div class="showMemInfo">
+            <h3>Mohammed Shaban</h3>
+            <p>Director FR</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Ibrahim-Rashwan.jpg" alt="Ibrahim Rashwan" title="Ibrahim Rashwan"></div>
+          <div class="showMemInfo">
+            <h3>Ibrahim Rashwan</h3>
+            <p>Vice director FR</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Omar-Mostafa.jpg" alt="Omar-Mostafa" title="Omar-Mostafa"></div>
+          <div class="showMemInfo">
+            <h3>Omar-Mostafa</h3>
+            <p>Director Social Media</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Youssef-Khaled.jpg" alt="Youssef-Khaled" title="Youssef-Khaled"></div>
+          <div class="showMemInfo">
+            <h3>Youssef-Khaled</h3>
+            <p>Director Graphic Design</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Khalid-Saber.jpg" alt="Khalid-Saber" title="Khalid-Saber"></div>
+          <div class="showMemInfo">
+            <h3>Khalid-Saber</h3>
+            <p>Vice director Graphic Design</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Mohammed-Morsy.jpeg" alt="Mohammed-Morsy" title="Mohammed-Morsy"></div>
+          <div class="showMemInfo">
+            <h3>Mohammed-Morsy</h3>
+            <p>Vice director Social Media</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Mohamed-Ayman.jpg" alt="Mohamed-Ayman" title="Mohamed-Ayman"></div>
+          <div class="showMemInfo">
+            <h3>Mohamed-Ayman</h3>
+            <p>Director Logistics</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Nour-El-baz.jpg" alt="Nour-El-baz" title="Nour-El-baz"></div>
+          <div class="showMemInfo">
+            <h3>Nour-El-baz</h3>
+            <p>Vice director Logistics</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Renad-Wael.jpg" alt="Renad Wael" title="Renad Wael"></div>
+          <div class="showMemInfo">
+            <h3>Renad Wael</h3>
+            <p>Vice director Logistics</p>
+          </div>
+        </div>
+        <div class="memInfo">
+          <div class="card"><img class="card-img-top" src="img/Renad-Ehab.jpg" alt="Renad Ehad" title="Renad Ehad"></div>
+          <div class="showMemInfo">
+            <h3>Renad Ehad</h3>
+            <p>Vice director Logistics</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec4 container-fluid" id="contact">
+      <div class="all">
+        <div class="social"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-instagram"></i></a><a href="mailto: Info@ignite-stemismailia.com"><i class="fa fa-envelope-o"></i></a><a href="tel: +2 (011) 121-61029"><i class="fa fa-phone"></i></a></div><span id="massageUs">| Message Us </span>
+        <h5>Ignite-STEM Ismailia &copy; 2020</h5>
+      </div>
+    </section>
+    <button class="btn btn-danger" id="toTop"><i class="fa fa-chevron-up"></i></button>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.vide.min.js"></script>
+    <script src="js/jquery.anisview.min.js"></script>
+    <script src="js/jquery.lettering.js"></script>
+    <script src="js/jquery.textillate.js"></script>
+    <script src="js/jquery.nicescroll.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/mainJs.js"></script>
+  </body>
+</html>
