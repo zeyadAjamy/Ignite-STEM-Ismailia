@@ -9,6 +9,7 @@ html, body {
   width: 100%;
   height: 100%;
   font-family: "Ubuntu", sans-serif;
+  background-color: #0f0f0f;
 }
 
 .start {
@@ -28,7 +29,7 @@ html, body {
   width: 100%;
   height: 0;
   position: fixed;
-  background-color: rgba(7, 7, 7, 0.863);
+  background-color: rgba(7, 7, 7, 0.61);
   z-index: 2220;
 }
 .subscribe .cont {
@@ -158,7 +159,7 @@ html, body {
   position: fixed;
   top: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2000;
+  z-index: 2300;
   display: none;
 }
 .subMenu .subMCont {
@@ -306,6 +307,8 @@ html, body {
   position: relative;
   height: auto;
   background-color: #0f0f0f;
+  padding: 0;
+  margin: 0;
   padding-bottom: 40px;
 }
 .sec2 h3 {
@@ -326,12 +329,8 @@ html, body {
   margin: auto;
 }
 .sec2 .infoCont {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
   margin-top: 40px;
+  justify-content: center;
 }
 .sec2 .infoCont .IgniteGene, .sec2 .infoCont .IgniteIsmailia {
   transition: border 0.5s linear;
@@ -367,6 +366,7 @@ html, body {
   height: 100vh;
   position: relative;
   background-color: rgba(15, 15, 15, 0.8);
+  height: 400px;
   text-align: center;
   color: rgba(255, 255, 255, 0.918);
 }
@@ -387,12 +387,16 @@ html, body {
   margin: auto;
 }
 .sec3 .memCont {
-  width: 100%;
-  height: 80%;
+  width: fit-content;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
 }
 .sec3 .memCont .memInfo {
-  width: min-content;
-  height: min-content;
+  width: auto;
+  height: auto;
   margin: auto;
   margin-top: 20px;
   position: relative;
@@ -400,7 +404,7 @@ html, body {
 }
 .sec3 .memCont .memInfo .card {
   background-color: transparent;
-  width: 30vmin;
+  width: 200px;
   height: auto;
   margin: 10px;
   display: inline-block;
@@ -541,7 +545,7 @@ html, body {
   }
 
   .centerv {
-    width: 50%;
+    width: 60%;
   }
 
   .sec4 span {
@@ -555,7 +559,7 @@ html, body {
   }
 
   .cont {
-    width: 50%;
+    width: 60%;
   }
 }
 @keyframes toAbout {
