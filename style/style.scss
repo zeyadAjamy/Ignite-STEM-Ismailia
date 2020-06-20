@@ -7,6 +7,19 @@ $colorBack: rgb(15, 15, 15);
 $IcoColor: rgb(219, 171, 131);
 $red: rgb(216, 9, 9);
 
+::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+    background: rgba(15, 15, 15, 0.178);
+}
+::-webkit-scrollbar-thumb {
+    background: gray;
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+}
+
 @mixin whp($p){
     width: 100%;
     height: 100vh;
@@ -391,12 +404,11 @@ html, body {
         margin: auto;
     }
     .memCont{
-        width:fit-content;
-        overflow-y: scroll;
+        width: 100%;
+        overflow-y: hidden;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        overflow-y: hidden;
         .memInfo{
             width: auto;
             height: auto;

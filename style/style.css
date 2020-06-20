@@ -3,6 +3,20 @@
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-family: 'Raleway', sans-serif;
 */
+::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+  background: rgba(15, 15, 15, 0.178);
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray;
+}
+
+::-webkit-scrollbar-corner {
+  background: #000;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -387,12 +401,11 @@ html, body {
   margin: auto;
 }
 .sec3 .memCont {
-  width: fit-content;
-  overflow-y: scroll;
+  width: 100%;
+  overflow-y: hidden;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  overflow-y: hidden;
 }
 .sec3 .memCont .memInfo {
   width: auto;
