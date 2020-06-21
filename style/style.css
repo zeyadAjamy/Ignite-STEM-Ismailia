@@ -336,7 +336,7 @@ html, body {
   right: 0px;
   font-family: "Raleway", sans-serif;
   font-weight: 200;
-  margin-top: -12vmin;
+  margin-top: -14vmin;
   position: absolute;
 }
 .sec2 .svg {
@@ -348,14 +348,6 @@ html, body {
   top: 2px;
   height: 12vmin;
   margin-top: -12vmin;
-}
-.sec2 hr {
-  width: 10%;
-  border: none;
-  height: 1px;
-  border-radius: 5px;
-  background-color: #dbab83;
-  margin: auto;
 }
 .sec2 .infoCont {
   margin-top: 40px;
@@ -403,6 +395,7 @@ html, body {
 .sec3 h3 {
   position: relative;
   font-size: 9vmin;
+  margin-left: -10px;
   font-family: "Raleway", sans-serif;
   font-weight: 200;
   z-index: 500;
@@ -571,6 +564,10 @@ html, body {
 
   .sec1 .jumbotron .fa {
     font-size: 4vmin;
+  }
+
+  .sec3 h3 {
+    margin-left: 8px;
   }
 }
 @media only screen and (min-width: 600px) {
