@@ -21,11 +21,13 @@ $(function() {
             $("header").css({position: "fixed", height: "60px"})
             $(".infoCont").attr("class", "infoCont container-fluid")
             $(".IgniteGene, .IgniteIsmailia").css({width: "100%", marginLeft: "0px", marginRight: "0px"})
+            $(".sec3").css({paddingLeft: "0px"})
         } else{
             $(".sidedNav").show()
             $("header").css({position: "relative", height: "auto"})
             $(".infoCont").attr("class", "infoCont row container-fluid")
             $(".IgniteGene, .IgniteIsmailia").css({width: "100%", marginLeft: "40px", marginRight: "15px"})
+            $(".sec3").css({paddingLeft: "25px"})
         }
     });
    ( toTop =(val)=>{
