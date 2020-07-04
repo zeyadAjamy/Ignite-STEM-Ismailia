@@ -1,0 +1,29 @@
+
+<section class="start">
+  <div class="spinner-border text-primary"></div>
+</section>
+<section class="fixedBg" data-vide-bg="vidBg/background.mp4"></section>
+<aside class="sidedNav"><span id="sideHome"></span><span id="sideAbout"></span><span id="sideTeam"></span><span id="sidedContact"></span></aside>
+<aside class="subMenu">
+  <div class="subMCont">
+    <ul>
+      <li id="sideSubHome"><a href="#home">Home</a></li>
+      <li id="sideSubAbout"><a href="#about">About</a></li>
+      <li id="sideSubTeam"><a href="#Team">Team</a></li>
+      <li id="sideSubBlogs"><a href="#">Blogs</a></li>
+      <li id="sideSubcontacts"><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</aside>
+<section class="massage" id="massage">
+  <div class="centerv">
+    <h3>Message</h3>
+    <form class="container-md" action="php/contact.php" method="POST">
+      <input type="text" value="" placeholder="Name" name="contName" required="required" data-validation-required-message="Please fill the required field."/>
+      <input type="email" value="" placeholder="Mail" name="contMail" required="required" data-validation-required-message="Please fill the required field."/>
+      <textarea value="" placeholder="Message" name="contMessage" required="required" data-validation-required-message="Please fill the required field."></textarea><br/>
+      <button id="contSubmit">Send</button>
+    </form>
+  </div>
+  <button class="btn btn-outline-light" id="closeMassageCont">Close</button>
+</section>

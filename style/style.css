@@ -31,7 +31,7 @@ html, body {
   height: 100vh;
   position: fixed;
   background-color: white;
-  z-index: 2250;
+  z-index: 2500;
 }
 .start .spinner-border {
   position: absolute;
@@ -181,7 +181,6 @@ html, body {
   position: fixed;
   left: 0px;
   width: 20%;
-  height: 100%;
   background-color: black;
   color: rgba(255, 255, 255, 0.692);
 }
@@ -207,16 +206,6 @@ html, body {
   margin-left: 30px;
   color: #dbab83;
   animation: subMenu 0.5s ease-in 0s forwards;
-}
-.subMenu button {
-  position: fixed;
-  left: 0px;
-  bottom: 20px;
-  border-radius: 0;
-  width: 20%;
-  color: #dbab83;
-  border-color: #dbab83;
-  display: none;
 }
 
 .sec1 {
@@ -466,17 +455,23 @@ html, body {
   height: 0;
   width: 100%;
   z-index: 10;
-  background-color: #7c0303;
+  background-image: linear-gradient(#7c0303 0%, #7c0303 88%, #0f0f0f 88%, #0f0f0f 100%);
+  padding: 0px;
 }
 .sec3 .memCont .showMemInfo h3 {
-  font-size: 4vmin;
-  margin-top: 30%;
+  font-size: 3.5vmin;
+  margin: 0px;
+  position: absolute;
   visibility: hidden;
 }
 .sec3 .memCont .showMemInfo p {
   color: #dbab83;
   font-size: 12px;
   visibility: hidden;
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  transform: translate(-50%, -10%);
 }
 
 .sec4 {
@@ -661,7 +656,7 @@ html, body {
     margin-left: 5px;
   }
 }
-.subscribe .cont, .massage .centerv, .sec1 .jumbotron {
+.subscribe .cont, .massage .centerv, .sec1 .jumbotron, .sec3 .memCont .showMemInfo h3 {
   position: absolute;
   left: 50%;
   top: 50%;

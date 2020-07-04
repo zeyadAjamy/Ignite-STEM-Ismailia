@@ -1,9 +1,12 @@
 $(function() {
     'use strict'
     var scrollTopVal = $(document).scrollTop()
+    var niceScrollControl, com, sidedNavBottom, scroll,
+        closeSubMen, toTop, sidednav;
 
-    var niceScrollControl, com, sidedNavBottom, scroll, closeSubMen, toTop, sidednav;
-    (niceScrollControl=(width)=>{
+    $(".subMCont").css("height", $(window).height());
+    
+    ( niceScrollControl=(width)=>{
         if (width >= 800){
             $("body, .memCont").niceScroll({
                 cursorwidth: '6px',
@@ -13,8 +16,8 @@ $(function() {
                 zindex: 2000,
                 horizrailenabled: false
             })
-        } 
-    })
+        }
+    });
     ( com = (width)=>{
         if(width <= 500){
             $(".sidedNav").hide()
@@ -30,7 +33,7 @@ $(function() {
             $(".sec3").css({paddingLeft: "25px"})
         }
     });
-   ( toTop =(val)=>{
+    ( toTop =(val)=>{
         if(val>= $(window).height()){
             $("#toTop").fadeIn()
         } else{
@@ -47,7 +50,7 @@ $(function() {
             vals=0
         }
         var contRatio = $(document).height()-64;
-        var footerHeight = 64 
+        var footerHeight = 64
         if(vals+$(window).height() >= contRatio){
             $("#sideHome, #sideAbout, #sideTeam").attr("class", "")
             $("#sidedContact").attr("class", "circleNav")
@@ -64,16 +67,13 @@ $(function() {
         $(".subMCont").animate({width: "0px"}, 400, _=>{
             $(".subMenu").fadeOut()
         })
-        $("button").hide()
+        $("section, .sidedNav").animate({marginLeft: "0%"}, 400)
     });
-    (sidednav = _=>{
+    ( sidednav = _=>{
         let homeValue = $(".mainTitle").attr('class')
         let aboutValue = $(".headSec2").attr('class')
         let teamValue = $(".headSec3").attr('class')
 
-        $("#sideHome").attr("class", "circleNav")
-        $("#sidedContact, #sideAbout, #sideTeam").attr('class', "")
-        
         if(homeValue.includes("bounceIn")){
             $("#sideHome").attr("class", "circleNav")
             $("#sidedContact, #sideAbout, #sideTeam").attr('class', "")
@@ -85,6 +85,7 @@ $(function() {
             $("#sidedContact, #sideHome, #sideAbout").attr('class', "")
         }
     });
+
     $(document).scroll(_=>{
         let scrollValue = $(document).scrollTop()
         toTop(scrollValue)
@@ -99,17 +100,31 @@ $(function() {
         let winWidth = $(window).width()
         com(winWidth)
         niceScrollControl(winWidth)
+        $(".subMCont").css("height", $(window).height());
     })
-    scroll(0)
-    ////////////////////// Menu \\\\\\\\\\\\\\\\\\\\\\\
+    $(document).on("click", _=>{
+        closeSubMen()
+    })
 
-    $(".fa-bars").on("click", _=>{
-        $("button").fadeIn(400)
+    // Onload
+    scroll(0)
+    $("#sideHome").attr("class", "circleNav")
+    $("#sidedContact, #sideAbout, #sideTeam").attr('class', "")
+    closeSubMen()
+    ////////////////////// Menu \\\\\\\\\\\\\\\\\\\\\\\
+    $(".fa-bars").on("click", (event)=>{
+        event.stopPropagation()
         $(".subMenu").fadeIn(400, _=>{
             $(".subMCont").animate({width: "20%"}, 400,_=>{
                 $(".subMCont ul").show()
             })
         })
+        setTimeout(_=>{
+            $("section, .sidedNav").animate({marginLeft: "20%"}, 400)
+        },400)
+    })
+    $(".subMCont").on("click", (event)=>{
+        event.stopPropagation()
     })
     $("#closeSubMenu").on("click", _=>{
         closeSubMen()
@@ -129,7 +144,7 @@ $(function() {
     $("#sideSubTeam").on("click", _=>{
         closeSubMen()
         setTimeout(_=>{
-            scroll($(window).height()+$(".sec2").height()-210)
+            scroll($(window).height()+$(".sec2").height()-125)
         },500)
     })
     $("#sideSubcontacts").on("click", _=>{
@@ -149,7 +164,7 @@ $(function() {
         scroll($(window).height()+10)
     })
     $("#teamMenu, #sideTeam").on("click", _=>{
-        scroll($(window).height()+$(".sec2").height()-212)
+        scroll($(window).height()+$(".sec2").height()-125)
 
     })
     $("#contactMenu, #sidedContact").on("click", _=>{
@@ -179,13 +194,18 @@ $(function() {
 
     $(".fa-bell").on("click", _=>{
         $(".subscribe").animate({"height": "100vh"}, 400, _=>{
-            $(".cont").fadeIn()
+            $(".cont, #submit-form").fadeIn()
         })
     })
     let docState = _=>{
         var state = document.readyState
         if(state == "complete"){
             $(".start").fadeOut()
+            setTimeout(_=>{
+                $(".subscribe").animate({"height": "100vh"}, 400, _=>{
+                    $(".cont").fadeIn()
+                })
+            }, 5000)
         } else{
             setTimeout(_=>{
                 docState()
@@ -221,16 +241,11 @@ $(function() {
 
     com($(window).width())
     niceScrollControl($(window).width())
-    docState()
     sidedNavBottom(scrollTopVal)
     sidednav()
+    docState()
     toTop(scrollTopVal)
-    setTimeout(_=>{
-        $(".subscribe").animate({"height": "100vh"}, 400, _=>{
-            $(".cont").fadeIn()
-        })
-    }, 5000)
-    setTimeout(_=>{
+    setInterval(_=>{
         console.clear()
-    }, 500)
+    }, 2000)
 })

@@ -13,16 +13,8 @@ html(lang ="en")
     body
         section.start
             div(class="spinner-border text-primary")
-        section.subscribe
-            form(class="cont container-sm" action="php/subscribe.php" method="POST")
-                i(class="fa fa-times") 
-                h3 subscribe
-                input(type="email" name="email" placeholder="Email" required) 
-                button(class="btn" id="submit-form") OK
-                
         //- Fixed Bg
         section(data-vide-bg="vidBg/background.mp4" class="fixedBg")
-       
         aside.sidedNav
             span#sideHome
             span#sideAbout
@@ -36,7 +28,7 @@ html(lang ="en")
                     li#sideSubTeam Team
                     li#sideSubBlogs Blogs
                     li#sideSubcontacts Contact
-                button(class="btn btn-outline-light" id="closeSubMenu") Close
+        
         section(class="massage" id="massage")
             div(class="centerv")
                 h3 Message
@@ -52,8 +44,7 @@ html(lang ="en")
                 i(class="fa fa-times") 
                 h3 subscribe
                 input(type="email" name="email" placeholder="Email" required) 
-                button(class="btn" id="submit-form") OK
-
+                button(class="btn" id="submit-form") OK        
         section(class="sec1" id="home")
             header.container-fluid
                 .container-sm
@@ -117,176 +108,15 @@ html(lang ="en")
                 | Pellentesque elementum neque diam, et congue risus dictum et.
                 | Nunc finibus efficitur.
             .memCont
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Mahmoud-Yasser.jpg" alt="Mahmoud-Yasser" title="Mahmoud-Yasser")
-                    .showMemInfo
-                        h3 Mahmoud-Yasser
-                        p Chairman
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Ahmed-Abdelhady.jpg" alt="Ahmed-Abdelhady" title="Ahmed-Abdelhady")
-                    .showMemInfo
-                        h3 Ahmed-Abdelhady
-                        p Vice Chairman
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Hala-Ashraf.jpg" alt="Hala-Ashraf" title="Hala-Ashraf")
-                    .showMemInfo
-                        h3 Hala-Ashraf
-                        p Digital Marketing Chief
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Youssef-Mahmoud.jpg" alt="Youssef-Mahmoud" title="Youssef-Mahmoud")
-                    .showMemInfo
-                        h3 Youssef-Mahmoud
-                        p Multimedia Chief
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Ahmed-Sayed.jpg" alt="Ahmed Sayed" title="دحا اخوي")
-                    .showMemInfo
-                        h3 Ahmed Sayed
-                        p Director HR
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Salma-Ahmed.jpg" alt="Salma-Ahmed" title="Salma-Ahmed")
-                    .showMemInfo
-                        h3 Salma-Ahmed
-                        p Vice director HR
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Rewan Khaled.jpg" alt="Rewan-Khaled" title="Rewan-Khaled")
-                    .showMemInfo
-                        h3 Rewan-Khaled
-                        p Vice director HR
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Ahmed-Hassan.jpg" alt="Ahmed-Hassan" title="Ahmed-Hassan")
-                    .showMemInfo
-                        h3 Ahmed-Hassan
-                        p Director Tech. Support
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Zeyad-Ajamy.jpg" alt="Zeyad-Ajamy" title="Zeyad-Ajamy")
-                    .showMemInfo
-                        h3 Zeyad-Ajamy
-                        p Vice director Tech. Support 
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Mohmmed-Hamza.jpg" alt="Mohmmed-Hamza" title="Mohmmed-Hamza")
-                    .showMemInfo
-                        h3 Mohmmed-Hamza
-                        p Director PR
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Earny-Essam.jpg" alt="Ereny Essam" title="Ereny Essam")
-                    .showMemInfo
-                        h3 Ereny Essam
-                        p Vice Director PR
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Hossam-Hassan.jpg" alt="Hossam-Hassan" title="Hossam-Hassan")
-                    .showMemInfo
-                        h3 Hossam-Hassan
-                        p Vice Director PR
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Youssef-Bokhary.jpg" alt="Youssef-Bokhary" title="Youssef-Bokhary")
-                    .showMemInfo
-                        h3 Youssef-Bokhary
-                        p Content Writing director
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/me.png" alt="Mem Name" title="Mem Name")
-                    .showMemInfo
-                        h3 Member Name
-                        p Vice director Content Writing
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Ziad-Hammad.jpg" alt="Ziad-Hammad" title="Ziad-Hammad")
-                    .showMemInfo
-                        h3 Ziad-Hammad
-                        p Director Video Editing
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Lina Ahmed.jpg" alt="Lina Ahmed" title="Lina Ahmed")
-                    .showMemInfo
-                        h3 Lina Ahmed
-                        p Vice director Video Editing
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Mohammed Shaban.jpg" alt="Mohammed Shaban" title="Mohammed Shaban")
-                    .showMemInfo
-                        h3 Mohammed Shaban
-                        p Director FR
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Ibrahim-Rashwan.jpg" alt="Ibrahim Rashwan" title="Ibrahim Rashwan")
-                    .showMemInfo
-                        h3 Ibrahim Rashwan
-                        p Vice director FR
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Omar-Mostafa.jpg" alt="Omar-Mostafa" title="Omar-Mostafa")
-                    .showMemInfo
-                        h3 Omar-Mostafa
-                        p Director Social Media
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Youssef-Khaled.jpg" alt="Youssef-Khaled" title="Youssef-Khaled")
-                    .showMemInfo
-                        h3 Youssef-Khaled
-                        p Director Graphic Design
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Khalid-Saber.jpg" alt="Khalid-Saber" title="Khalid-Saber")
-                    .showMemInfo
-                        h3 Khalid-Saber
-                        p Vice director Graphic Design
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Mohammed-Morsy.jpeg" alt="Mohammed-Morsy" title="Mohammed-Morsy")
-                    .showMemInfo
-                        h3 Mohammed-Morsy
-                        p Vice director Social Media
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Mohamed-Ayman.jpg" alt="Mohamed-Ayman" title="Mohamed-Ayman")
-                    .showMemInfo
-                        h3 Mohamed-Ayman
-                        p Director Logistics
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Nour-El-baz.jpg" alt="Nour-El-baz" title="Nour-El-baz")
-                    .showMemInfo
-                        h3 Nour-El-baz
-                        p Vice director Logistics
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Renad-Wael.jpg" alt="Renad Wael" title="Renad Wael")
-                    .showMemInfo
-                        h3 Renad Wael
-                        p Vice director Logistics
-                .memInfo
-                    .card
-                        img(class="card-img-top" src="img/Renad-Ehab.jpg" alt="Renad Ehad" title="Renad Ehad")
-                    .showMemInfo
-                        h3 Renad Ehad
-                        p Vice director Logistics
+                each value, key in {'Mahmoud-Yasser': "Chairman", "Ahmed-Abdelhady": "Vice Chairman", "Hala-Ashraf": "Digital Marketing Chief", "Youssef-Mahmoud": "Multimedia Chief", "Ahmed-Sayed": "Director HR", "Salma-Ahmed": "Vice director HR", "Rewan-Khaled": "Vice director HR", "Ahmed-Hassan": "Director Tech. Support", "Zeyad-Ajamy": "Vice director Tech. Support", "Mohmmed-Hamza": "Director PR", "Earny-Essam": "Vice Director PR", "Hossam-Hassan": "Vice Director PR", "Youssef-Bokhary": "Content Writing director", "Ziad-Hammad" :"Director Video Editing", "Lina-Ahmed": "Vice director Video Editing", "Mohammed Shaban": "Director FR", "Ibrahim-Rashwan": "Vice director FR", "Omar-Mostafa": "Director Social Media", "Youssef-Khaled": "Director Graphic Design", "Khalid-Saber": "Vice director Graphic Design", "Mohammed-Morsy": "Vice director Social Media", "Mohamed-Ayman":"Director Logistics", "Nour-El-baz": "Vice director Logistics", "Renad-Wael": "Vice director Logistics", "Renad-Ehab": "Vice director Logistics"}
+                    .memInfo
+                        .card
+                            img(class="card-img-top" src=`img/${key}.jpg` alt= key, title= key )
+                        .showMemInfo
+                            h3 #{key}
+                            p #{value}
 
-
-        section(class="sec4 container-fluid" id="contact")
-            div(class="all")
-                div(class="social")
-                    a(href="#"): i(class="fa fa-facebook")
-                    a(href="#"): i(class="fa fa-instagram")
-                    a(href="mailto: Info@ignite-stemismailia.com"): i(class="fa fa-envelope-o")
-                    a(href="tel: +2 (011) 121-61029"): i(class="fa fa-phone")
-                span#massageUs | Message Us 
-                h5 Ignite-STEM Ismailia &copy; 2020
- 
-        button(class="btn btn-danger" id="toTop"): i(class="fa fa-chevron-up")
-
+        include includes/footer.pug
         script(src="js/jquery.js")
         script(src="js/jquery.vide.min.js")
         script(src="js/jquery.anisview.min.js")
