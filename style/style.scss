@@ -201,12 +201,16 @@ html, body {
             text-align: center;
             justify-content: space-around;
             padding: 0;
-            li{
+            a{
                 font-size: 3.5vmin;
                 cursor: pointer;
                 padding: 10px;
                 transition: color ease;
+                text-decoration: none;
+                color: white;
                 &:hover{
+                    text-decoration: none;
+                    color: white;
                     margin-left: 30px;
                     color: $IcoColor;
                     animation: subMenu 0.5s ease-in 0s forwards;

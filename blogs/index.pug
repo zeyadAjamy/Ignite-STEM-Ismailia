@@ -11,14 +11,16 @@ html(lang ="en")
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
         link(href="https://fonts.googleapis.com/css2?family=Ubuntu&family=Yanone+Kaffeesatz:wght@600&family=Righteous&family=Raleway:wght@200;300&display=swap" rel="stylesheet")
     body
+        section.start
+            div(class="spinner-border text-primary")
         aside.subMenu
             .subMCont
                 ul
-                    li#sideSubHome Home
-                    li#sideSubAbout About
-                    li#sideSubTeam Team
-                    li#sideSubBlogs  Blogs
-                    li#sideSubcontacts Contact
+                    a(href="../index.html" id="sideSubHome") Home
+                    a(href="../index.html" id="sideSubAbout") About
+                    a(href="../index.html" id="sideSubTeam") Team
+                    a(id="sideSubBlogs") Blogs
+                    a(href="../index.html" id="sideSubcontacts") Contact
         section(class="massage" id="massage")
             div(class="centerv")
                 h3 Message
@@ -40,7 +42,7 @@ html(lang ="en")
                     a(href= "#" ,id="blogs") Blogs
                     a(href= "../index.html" ,id="contactMenu") Contact
                 i(class="fa fa-bars")
-        
+
         section.allBlogs
 
         include ../includes/footer.pug

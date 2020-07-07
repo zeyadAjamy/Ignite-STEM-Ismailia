@@ -74,7 +74,7 @@ $(function() {
         let aboutValue = $(".headSec2").attr('class')
         let teamValue = $(".headSec3").attr('class')
         if(homeValue == undefined){
-            $("#blogs").css("color", "rgb(219, 171, 131)")
+            $("#blogs, #sideSubBlogs").css("color", "rgb(219, 171, 131)")
         }else{
             if(homeValue.includes("bounceIn")){
                 $("#sideHome").attr("class", "circleNav")
@@ -95,6 +95,7 @@ $(function() {
         toTop(scrollValue)
         sidedNavBottom(scrollValue)
         sidednav()
+        closeSubMen()
         if(scrollValue+$(window).height() == $(document).height()){
             $("#sidedContact").attr("class", "circleNav")
             $("#sideTeam, #sideHome, #sideAbout").attr('class', "")
