@@ -24,6 +24,8 @@ html, body {
   height: 100%;
   font-family: "Ubuntu", sans-serif;
   background-color: #0f0f0f;
+  min-height: 100vh;
+  position: relative;
 }
 
 .start {
@@ -213,49 +215,6 @@ html, body {
   height: 100vh;
   position: relative;
   z-index: 1000;
-}
-.sec1 header {
-  height: auto;
-  background-color: #0f0f0f;
-  border-bottom: 0.5px solid rgba(219, 171, 131, 0.356);
-  z-index: 2300;
-}
-.sec1 header img {
-  width: 90px;
-  margin: 5px 0 5px 0px;
-}
-.sec1 header nav {
-  float: right;
-  margin: 18px 0px 10px 0px;
-  color: rgba(255, 255, 255, 0.863);
-  width: 300px;
-  display: flex;
-  font-size: 14px;
-  justify-content: space-evenly;
-  flex-wrap: nowrap;
-}
-.sec1 header nav .subScrib {
-  margin-left: 20px;
-}
-.sec1 header nav span {
-  cursor: pointer;
-  width: 0px;
-  border-bottom: 1px solid #dbab83;
-  transition: 0.5s width ease-in-out;
-}
-.sec1 header nav span:hover {
-  width: 30px;
-}
-.sec1 header .fa-bars {
-  position: absolute;
-  right: 50px;
-  top: 17px;
-  font-size: 25px;
-  color: rgba(255, 255, 255, 0.733);
-  cursor: pointer;
-}
-.sec1 header .fa-bars:hover {
-  color: white;
 }
 .sec1 .jumbotron {
   width: 100%;
@@ -534,6 +493,59 @@ html, body {
   background-color: rgba(255, 0, 0, 0.7);
 }
 
+header {
+  z-index: 1000;
+}
+
+.allBlogs {
+  padding: 20px 0 20px 0;
+  width: 100%;
+  text-align: center;
+  height: auto;
+}
+.allBlogs .blogShowCont {
+  width: 300px;
+  height: 450px;
+  overflow: hidden;
+  padding: 10px 0 10px 0;
+  margin: 10px;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+}
+.allBlogs .blogShowCont:hover {
+  border-bottom: 3px solid #d80909;
+}
+.allBlogs .blogShowCont .blogHeader {
+  margin: 10px 0 10px 30px;
+  text-align: start;
+}
+.allBlogs .blogShowCont .blogImg {
+  width: 100%;
+}
+.allBlogs .blogShowCont .blogCont {
+  font-size: 13px;
+  margin: 10px 0 10px 30px;
+  text-align: start;
+}
+.allBlogs .blogShowCont .more {
+  position: absolute;
+  bottom: -10px;
+  width: 100%;
+  height: 50px;
+  text-align: end;
+}
+.allBlogs .blogShowCont .more span {
+  display: block;
+  cursor: pointer;
+  margin-top: -23px;
+  margin-right: 20px;
+  color: #ee0f0f;
+  font-size: 14px;
+}
+
 @media only screen and (max-width: 600px) {
   .mainNav {
     visibility: hidden;
@@ -564,6 +576,10 @@ html, body {
   .sec3 h3 {
     margin-left: 8px;
   }
+
+  .allBlogs {
+    padding-top: 80px;
+  }
 }
 @media only screen and (min-width: 600px) {
   .mainNav {
@@ -590,6 +606,10 @@ html, body {
 
   .cont {
     width: 60%;
+  }
+
+  .allBlogs {
+    padding-bottom: 45px;
   }
 }
 @keyframes toAbout {
@@ -656,6 +676,54 @@ html, body {
     margin-left: 5px;
   }
 }
+.sec1 header, header {
+  height: auto;
+  background-color: #0f0f0f;
+  border-bottom: 0.5px solid rgba(219, 171, 131, 0.356);
+  z-index: 2300;
+}
+.sec1 header img, header img {
+  width: 90px;
+  margin: 5px 0 5px 0px;
+}
+.sec1 header nav, header nav {
+  float: right;
+  margin: 18px 0px 10px 0px;
+  color: rgba(255, 255, 255, 0.863);
+  width: 300px;
+  display: flex;
+  font-size: 14px;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+}
+header nav .subScrib {
+  margin-left: 20px;
+}
+.sec1 header nav a, header nav a {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  width: 0px;
+  border-bottom: 1px solid #dbab83;
+  transition: 0.5s width ease-in-out;
+}
+header nav a:hover {
+  width: 30px;
+  text-decoration: none;
+  color: white;
+}
+header .fa-bars {
+  position: absolute;
+  right: 50px;
+  top: 17px;
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.733);
+  cursor: pointer;
+}
+header .fa-bars:hover {
+  color: white;
+}
+
 .subscribe .cont, .massage .centerv, .sec1 .jumbotron, .sec3 .memCont .showMemInfo h3 {
   position: absolute;
   left: 50%;

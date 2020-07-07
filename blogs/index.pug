@@ -17,12 +17,12 @@ html(lang ="en")
                     li#sideSubHome Home
                     li#sideSubAbout About
                     li#sideSubTeam Team
-                    li#sideSubBlogs: a(href="#") Blogs
-                    li#sideSubcontacts: a(href="#contact") Contact
+                    li#sideSubBlogs  Blogs
+                    li#sideSubcontacts Contact
         section(class="massage" id="massage")
             div(class="centerv")
                 h3 Message
-                form(class="container-md" action="php/contact.php" method="POST")
+                form(class="container-md" action="../php/contact.php" method="POST")
                     input(type="text" value="" placeholder="Name" name="contName" required data-validation-required-message="Please fill the required field.")
                     input(type="email" value="" placeholder="Mail" name="contMail" required data-validation-required-message="Please fill the required field.")
                     textarea(value="" placeholder="Message" name="contMessage" required data-validation-required-message="Please fill the required field.")
@@ -30,18 +30,19 @@ html(lang ="en")
                     button(id="contSubmit") Send
             button(class="btn btn-outline-light" id="closeMassageCont") Close
 
-        section(class="sec1" id="home")
-            header.container-fluid
-                .container-sm
-                    img(src="../img/logo.png" alt="Ignite ISMAILIA Logo" title="Ignite Ismailia")
-                    nav.mainNav
-                        span(id="homeMenu") Home
-                        span(id="aboutMenu") About
-                        span(id="teamMenu") Team
-                        span(id="blogs") Blogs
-                        span(id="contactMenu") Contact
-                    i(class="fa fa-bars")
-            
+        header(class="container-fluid", id="blogHeader")
+            .container-sm
+                img(src="../img/logo.png" alt="Ignite ISMAILIA Logo" title="Ignite Ismailia")
+                nav.mainNav
+                    a(href= "../index.html" ,id="homeMenu") Home
+                    a(href= "../index.html" ,id="aboutMenu") About
+                    a(href= "../index.html" ,id="teamMenu") Team
+                    a(href= "#" ,id="blogs") Blogs
+                    a(href= "../index.html" ,id="contactMenu") Contact
+                i(class="fa fa-bars")
+        
+        section.allBlogs
+
         include ../includes/footer.pug
         script(src="../js/jquery.js")
         script(src="../js/jquery.anisview.min.js")

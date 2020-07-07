@@ -18,15 +18,15 @@
           <li id="sideSubHome">Home</li>
           <li id="sideSubAbout">About</li>
           <li id="sideSubTeam">Team</li>
-          <li id="sideSubBlogs"><a href="#">Blogs</a></li>
-          <li id="sideSubcontacts"><a href="#contact">Contact</a></li>
+          <li id="sideSubBlogs"> Blogs</li>
+          <li id="sideSubcontacts">Contact</li>
         </ul>
       </div>
     </aside>
     <section class="massage" id="massage">
       <div class="centerv">
         <h3>Message</h3>
-        <form class="container-md" action="php/contact.php" method="POST">
+        <form class="container-md" action="../php/contact.php" method="POST">
           <input type="text" value="" placeholder="Name" name="contName" required data-validation-required-message="Please fill the required field.">
           <input type="email" value="" placeholder="Mail" name="contMail" required data-validation-required-message="Please fill the required field.">
           <textarea value="" placeholder="Message" name="contMessage" required data-validation-required-message="Please fill the required field."></textarea><br>
@@ -35,13 +35,12 @@
       </div>
       <button class="btn btn-outline-light" id="closeMassageCont">Close</button>
     </section>
-    <section class="sec1" id="home">
-      <header class="container-fluid">
-        <div class="container-sm"><img src="../img/logo.png" alt="Ignite ISMAILIA Logo" title="Ignite Ismailia">
-          <nav class="mainNav"><span id="homeMenu">Home</span><span id="aboutMenu">About</span><span id="teamMenu">Team</span><span id="blogs">Blogs</span><span id="contactMenu">Contact</span></nav><i class="fa fa-bars"></i>
-        </div>
-      </header>
-    </section>
+    <header class="container-fluid" id="blogHeader">
+      <div class="container-sm"><img src="../img/logo.png" alt="Ignite ISMAILIA Logo" title="Ignite Ismailia">
+        <nav class="mainNav"><a href="../index.html" id="homeMenu">Home</a><a href="../index.html" id="aboutMenu">About</a><a href="../index.html" id="teamMenu">Team</a><a href="#" id="blogs">Blogs</a><a href="../index.html" id="contactMenu">Contact</a></nav><i class="fa fa-bars"></i>
+      </div>
+    </header>
+    <section class="allBlogs"></section>
     <section class="sec4 container-fluid" id="contact">
       <div class="all">
         <div class="social"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-instagram"></i></a><a href="mailto: Info@ignite-stemismailia.com"><i class="fa fa-envelope-o"></i></a><a href="tel: +2 (011) 121-61029"><i class="fa fa-phone"></i></a></div><span id="massageUs">| Message Us </span>

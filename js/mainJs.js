@@ -2,7 +2,7 @@ $(function() {
     'use strict'
     var scrollTopVal = $(document).scrollTop()
     var niceScrollControl, com, sidedNavBottom, scroll,
-        closeSubMen, toTop, sidednav;
+        closeSubMen, toTop, sidednav, blogOpen;
 
     $(".subMCont").css("height", $(window).height());
     
@@ -13,7 +13,7 @@ $(function() {
                 cursorcolor: 'rgb(219, 171, 131)',
                 cursorborder: 'none',
                 cursorborderradius: 0,
-                zindex: 2000,
+                zindex: 3000,
                 horizrailenabled: false
             })
         }
@@ -27,7 +27,7 @@ $(function() {
             $(".sec3").css({paddingLeft: "0px"})
         } else{
             $(".sidedNav").show()
-            $("header").css({position: "relative", height: "auto"})
+                 $("header").css({position: "relative", height: "auto"})
             $(".infoCont").attr("class", "infoCont row container-fluid")
             $(".IgniteGene, .IgniteIsmailia").css({width: "100%", marginLeft: "40px", marginRight: "15px"})
             $(".sec3").css({paddingLeft: "25px"})
@@ -67,25 +67,29 @@ $(function() {
         $(".subMCont").animate({width: "0px"}, 400, _=>{
             $(".subMenu").fadeOut()
         })
-        $("section, .sidedNav").animate({marginLeft: "0%"}, 400)
+        $("section, .sidedNav, #blogHeader").animate({marginLeft: "0%"}, 400)
     });
     ( sidednav = _=>{
         let homeValue = $(".mainTitle").attr('class')
         let aboutValue = $(".headSec2").attr('class')
         let teamValue = $(".headSec3").attr('class')
-
-        if(homeValue.includes("bounceIn")){
-            $("#sideHome").attr("class", "circleNav")
-            $("#sidedContact, #sideAbout, #sideTeam").attr('class', "")
-        } else if(aboutValue.includes("bounceIn")){
-            $("#sideAbout").attr("class", "circleNav")
-            $("#sidedContact, #sideHome, #sideTeam").attr('class', "")
-        } else if(teamValue.includes("bounceIn")){
-            $("#sideTeam").attr("class", "circleNav")
-            $("#sidedContact, #sideHome, #sideAbout").attr('class', "")
+        if(homeValue == undefined){
+            $("#blogs").css("color", "rgb(219, 171, 131)")
+        }else{
+            if(homeValue.includes("bounceIn")){
+                $("#sideHome").attr("class", "circleNav")
+                $("#sidedContact, #sideAbout, #sideTeam").attr('class', "")
+            } else if(aboutValue.includes("bounceIn")){
+                $("#sideAbout").attr("class", "circleNav")
+                $("#sidedContact, #sideHome, #sideTeam").attr('class', "")
+            } else if(teamValue.includes("bounceIn")){
+                $("#sideTeam").attr("class", "circleNav")
+                $("#sidedContact, #sideHome, #sideAbout").attr('class', "")
+            }
         }
     });
 
+    
     $(document).scroll(_=>{
         let scrollValue = $(document).scrollTop()
         toTop(scrollValue)
@@ -120,7 +124,7 @@ $(function() {
             })
         })
         setTimeout(_=>{
-            $("section, .sidedNav").animate({marginLeft: "20%"}, 400)
+            $("section, .sidedNav, #blogHeader").animate({marginLeft: "20%"}, 400)
         },400)
     })
     $(".subMCont").on("click", (event)=>{
@@ -165,7 +169,6 @@ $(function() {
     })
     $("#teamMenu, #sideTeam").on("click", _=>{
         scroll($(window).height()+$(".sec2").height()-125)
-
     })
     $("#contactMenu, #sidedContact").on("click", _=>{
         scroll($(window).height()*2+$(".sec2").height()+65)
@@ -238,14 +241,56 @@ $(function() {
             repeat: true
         });
     })
+    /////////////////// Blogs \\\\\\\\\\\\\\\\\\\\\
+    $.getJSON("../js/blogs.json", function(data) {
+        
+        for(let i in data){
+            var html = 
+                `<div class="blogShowCont _${data[i].name}">
+                    <h3 class="blogHeader">${data[i].Header}</h3><img class="blogImg" src="../img/${data[i].imgURL}.jpg">
+                    <p class="blogCont">${data[i].Content}</p>
+                    <div class="more"><img src="../img/backGrad.png" class="bgFeat"><span onclick="blogOpen(${data[i].name})">Read More...</span></div>
+                </div>`
+            $(".allBlogs").append(html)
+        }
+    })
 
     com($(window).width())
     niceScrollControl($(window).width())
     sidedNavBottom(scrollTopVal)
     sidednav()
-    docState()
     toTop(scrollTopVal)
     setInterval(_=>{
-        console.clear()
-    }, 2000)
+        //console.clear()
+    }, 1000)
+    docState()
 })
+function blogOpen(i){
+    var that = `._${i}`
+    console.log($(that).css("height"))
+    if($(that).css("height") == "450px"){
+        $(that).siblings().css({
+            height: "450px",
+            paddingBottom: "0px",
+            opacity: "0.5"
+        })
+        $(that).css({
+            height: "auto",
+            paddingBottom: "40px",
+            opacity: "1"
+        })
+        $(`${that} .more span`).text("Read Less...")
+    }else{
+        $(that).siblings().css({
+            height: "450px",
+            paddingBottom: "0px",
+            opacity: "1"
+        })
+        $(that).css({
+            height: "450px",
+            paddingBottom: "0px",
+            opacity: "1"
+        }) 
+        $(`${that} .more span`).text("Read More...")
+    }
+}
