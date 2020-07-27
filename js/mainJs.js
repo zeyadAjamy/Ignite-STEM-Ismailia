@@ -5,7 +5,6 @@ $(function() {
         closeSubMen, toTop, sidednav, blogOpen;
 
     $(".subMCont").css("height", $(window).height());
-    
     ( niceScrollControl=(width)=>{
         if (width >= 800){
             $("body, .memCont").niceScroll({
@@ -95,7 +94,6 @@ $(function() {
         toTop(scrollValue)
         sidedNavBottom(scrollValue)
         sidednav()
-        closeSubMen()
         if(scrollValue+$(window).height() == $(document).height()){
             $("#sidedContact").attr("class", "circleNav")
             $("#sideTeam, #sideHome, #sideAbout").attr('class', "")
@@ -241,7 +239,7 @@ $(function() {
             direction: 'both',
             repeat: true
         });
-    })
+    });
     /////////////////// Blogs \\\\\\\\\\\\\\\\\\\\\
     $.getJSON("../js/blogs.json", function(data) {
         
@@ -254,8 +252,11 @@ $(function() {
                 </div>`
             $(".allBlogs").append(html)
         }
-    })
+    });
+    /////////////////// Apply CountDown \\\\\\\\\\\\\\\\\\
+    $.getScript('js/countdown.js', function(){
 
+    });
     com($(window).width())
     niceScrollControl($(window).width())
     sidedNavBottom(scrollTopVal)

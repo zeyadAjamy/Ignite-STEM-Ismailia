@@ -6,7 +6,6 @@
 $colorBack: rgb(15, 15, 15);
 $IcoColor: rgb(219, 171, 131);
 $red: rgb(216, 9, 9);
-
 ::-webkit-scrollbar {
     height: 12px;
     width: 12px;
@@ -187,7 +186,6 @@ html, body {
         position: fixed;
         left: 0px;
         width: 20%;
-        
         background-color: rgb(0, 0, 0);
         color: rgba(255, 255, 255, 0.692);
         ul{
@@ -346,7 +344,7 @@ html, body {
 .sec3{
     @include whp(relative);
     background-color: rgba(15, 15, 15, 0.8);
-    height: 430px;
+    height: 460px;
     padding-left: 25px;
     text-align: center;
     color: rgba(255, 255, 255, 0.918);
@@ -484,13 +482,59 @@ html, body {
         }
     }
 }
-
+.apply{
+    position: fixed;
+    bottom: 0;
+    height: 65px; 
+    width: 100%;
+    background-color: $colorBack;
+    z-index: 1100;
+    // h3{
+    //     text-align: center;
+    //     color: $IcoColor;
+    //     font-size: 20px;
+    //     margin: 5px;
+    //     margin-bottom: 5px;
+    // }
+    .timeCont{
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        height: 100%;
+        width: 100%;
+        flex-wrap: nowrap;
+        .time{
+            font-size: 18px;
+            margin: 10px 0 10px 0;
+            color: white;
+            width: auto;
+            padding: 10px 30px 6px 30px;
+            border: 1px solid $IcoColor;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .applybtn{
+            cursor: pointer;
+            width: 100px;
+            background-color: $red;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+            height: 46px;
+            text-align: center;
+            transition: background-color 0.4s ease;
+            text-decoration: none;
+            &:hover{
+                background-color: rgb(165, 0, 0);
+            }
+        }
+    }
+}
 #toTop{
     position: fixed;
     right: 20px;
     bottom: 80px;
     border-radius: 50%;
-    z-index: 1000;
+    z-index: 2000;
     width: 40px;
     height: 40px;
     background-color: $red;
