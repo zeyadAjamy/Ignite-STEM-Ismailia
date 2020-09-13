@@ -19,7 +19,7 @@
     <aside class="sidedNav"><span id="sideHome"></span><span id="sideAbout"></span><span id="sideTeam"></span><span id="sidedContact"></span></aside>
     <aside class="subMenu">
       <div class="subMCont">
-        <ul><a id="sideSubHome">Home</a><a id="sideSubAbout">About</a><a id="sideSubTeam">Team</a><a href="blogs/index.html" id="sideSubBlogs">Blogs</a><a id="sideSubcontacts">Contact</a></ul>
+        <ul><a id="sideSubHome">Home</a><a id="sideSubAbout">About</a><a id="sideSubTeam">Team</a><a href="#" id="sideSubBlogs">Blogs</a><a id="sideSubcontacts">Contact</a></ul>
       </div>
     </aside>
     <section class="massage" id="massage">
@@ -44,7 +44,7 @@
     <section class="sec1" id="home">
       <header class="container-fluid">
         <div class="container-sm"><img src="img/logo.png" alt="Ignite ISMAILIA Logo" title="Ignite Ismailia">
-          <nav class="mainNav"><a id="homeMenu">Home</a><a id="aboutMenu">About</a><a id="teamMenu">Team</a><a href="blogs/index.html" id="blogs">Blogs</a><a id="contactMenu">Contact</a></nav><i class="fa fa-bars"></i>
+          <nav class="mainNav"><a id="homeMenu">Home</a><a id="aboutMenu">About</a><a id="teamMenu">Team</a><a href="#" id="blogs">Blogs</a><a id="contactMenu">Contact</a></nav><i class="fa fa-bars"></i>
         </div>
       </header>
       <div class="jumbotron">
@@ -268,6 +268,19 @@
         <div class="time display-4"></div><a class="applybtn" href="https://form.jotform.com/202003303103024" target="_blank">Apply</a>
       </div>
     </section>
+    <section class="hack">
+      <video autoplay id="hackVid">
+        <source src="vidBg/Ignite.mp4" type="video/mp4">
+        <p>Your Browser Doesn't Support our video.</p>
+      </video>
+      <div class="hackAll">
+        <button class="btn fa fa-times hackClose" id="hackClose"></button>
+        <div class="cont"><img class="logo" src="img/logo.png" title="Ignite Ismailia" alt="Ignite Ismailia's logo">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan id sem at egestas. </p>
+          <div class="btn-group"><a class="btn btn-outline-dark" href="hack/Writing Hackathon.pdf" download>HACKATHON DETAILS <i class="fa fa-download"></i></a><a class="btn btn-dark" href="https://forms.gle/b5oSDVDbPqAcRVzj7">APPLY NOW  </a></div>
+        </div>
+      </div>
+    </section>
     <section class="sec4 container-fluid" id="contact">
       <div class="all">
         <div class="social"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-instagram"></i></a><a href="mailto: Info@ignite-stemismailia.com"><i class="fa fa-envelope-o"></i></a><a href="tel: +2 (011) 121-61029"><i class="fa fa-phone"></i></a></div><span id="massageUs">| Message Us </span>
@@ -282,6 +295,7 @@
     <script src="js/jquery.textillate.js"></script>
     <script src="js/jquery.nicescroll.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/mainJs.js"></script>
+    <script src="js/fluidPlayer.js"></script>
+    <script src="js/mainJs.js" type="module"></script>
   </body>
 </html>

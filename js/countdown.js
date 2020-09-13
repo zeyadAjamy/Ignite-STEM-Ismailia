@@ -1,5 +1,5 @@
-var countDownDate = new Date("Jul 30, 2020 00:00:00").getTime();
 var x = setInterval(function() {
+  var countDownDate = new Date("JUL 1, 2020 00:00:00").getTime();
   var now = new Date().getTime();
   var distance = countDownDate - now;
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -12,5 +12,6 @@ var x = setInterval(function() {
     clearInterval(x);
     // Done  Output
     $(".time").text("EXPIRED");
+    $(".apply").css("visibility", "hidden")
   }
-}, 1000);
+}, 1000)

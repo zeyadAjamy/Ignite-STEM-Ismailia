@@ -26,7 +26,7 @@ html(lang ="en")
                     a(id="sideSubHome") Home
                     a(id="sideSubAbout") About
                     a(id="sideSubTeam") Team
-                    a(href="blogs/index.html" id="sideSubBlogs") Blogs
+                    a(href="#" id="sideSubBlogs") Blogs
                     a(id="sideSubcontacts") Contact
         
         section(class="massage" id="massage")
@@ -53,7 +53,7 @@ html(lang ="en")
                         a( id="homeMenu") Home
                         a( id="aboutMenu") About
                         a( id="teamMenu") Team
-                        a(href="blogs/index.html" id="blogs") Blogs
+                        a(href="#" id="blogs") Blogs
                         a( id="contactMenu") Contact
                     i(class="fa fa-bars")
             .jumbotron
@@ -104,6 +104,18 @@ html(lang ="en")
             .timeCont
                 div(class="time display-4")
                 a(href="https://form.jotform.com/202003303103024" class="applybtn" target="_blank") Apply
+        section.hack
+            video(autoplay id="hackVid")
+                source(src="vidBg/Ignite.mp4" type="video/mp4")
+                p Your Browser Doesn't Support our video.
+            .hackAll
+                button(class="btn fa fa-times hackClose")#hackClose
+                .cont
+                    img(src="img/logo.png" class="logo" title="Ignite Ismailia" alt="Ignite Ismailia's logo")
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan id sem at egestas. 
+                    .btn-group
+                        a(class="btn btn-outline-dark" href="hack/Writing Hackathon.pdf" download) HACKATHON DETAILS #[i.fa.fa-download]
+                        a(class="btn btn-dark" href="https://forms.gle/b5oSDVDbPqAcRVzj7") APPLY NOW  
                 
         include includes/footer.pug
         script(src="js/jquery.js")
@@ -113,4 +125,5 @@ html(lang ="en")
         script(src="js/jquery.textillate.js")
         script(src="js/jquery.nicescroll.js")
         script(src="js/bootstrap.bundle.min.js")
-        script(src="js/mainJs.js")
+        script(src="js/fluidPlayer.js")
+        script(src="js/mainJs.js", type="module")

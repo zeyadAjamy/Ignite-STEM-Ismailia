@@ -482,6 +482,7 @@ html, body {
 
 .apply {
   position: fixed;
+  display: none;
   bottom: 0;
   height: 65px;
   width: 100%;
@@ -519,6 +520,63 @@ html, body {
 }
 .apply .timeCont .applybtn:hover {
   background-color: #a50000;
+}
+
+.hack {
+  width: 100%;
+  height: 100vh;
+  margin: 0px;
+  position: fixed;
+  top: 0px;
+  background-color: #0f0f0f;
+  z-index: 3000;
+}
+.hack .hackAll {
+  width: 100%;
+  height: 0px;
+  padding: 5px 0px 5px 0px;
+  background-color: white;
+  position: absolute;
+  bottom: 0px;
+  z-index: -1;
+  text-align: center;
+  transition: height 1s ease-in-out;
+  display: none;
+}
+.hack .hackAll .hackClose {
+  float: right;
+  margin: 20px 30px 0px 0px;
+  font-size: 20px;
+  color: #d80909;
+  display: none;
+}
+.hack .hackAll .cont {
+  width: 80%;
+  height: auto;
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.hack .hackAll .cont .logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.hack .hackAll .cont p {
+  font-size: 2vmin;
+}
+.hack .hackAll .cont .btn {
+  position: relative;
+  top: 50;
+  border-radius: 0px;
+  margin: 2.5px;
+  font-size: 15px;
 }
 
 #toTop {
@@ -564,16 +622,21 @@ header {
   border-bottom: 3px solid #d80909;
 }
 .allBlogs .blogShowCont .blogHeader {
-  margin: 10px 0 10px 30px;
+  margin: 10px;
   text-align: start;
+  font-size: 20px;
 }
 .allBlogs .blogShowCont .blogImg {
   width: 100%;
 }
 .allBlogs .blogShowCont .blogCont {
   font-size: 13px;
-  margin: 10px 0 10px 30px;
+  margin: 5px;
   text-align: start;
+  word-break: break-all;
+}
+.allBlogs .blogShowCont .blogCont:first-letter {
+  font-weight: bold;
 }
 .allBlogs .blogShowCont .more {
   position: absolute;
@@ -735,7 +798,7 @@ header {
   float: right;
   margin: 18px 0px 10px 0px;
   color: rgba(255, 255, 255, 0.863);
-  width: 300px;
+  width: 250px;
   display: flex;
   font-size: 14px;
   justify-content: space-evenly;
@@ -748,14 +811,24 @@ header nav .subScrib {
   cursor: pointer;
   color: white;
   text-decoration: none;
-  width: 0px;
-  border-bottom: 1px solid #dbab83;
-  transition: 0.5s width ease-in-out;
+  position: relative;
 }
 header nav a:hover {
-  width: 30px;
   text-decoration: none;
   color: white;
+}
+.sec1 header nav a:after, header nav a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  transform: scaleX(0);
+  width: 100%;
+  height: 1px;
+  transition: 0.5s transform ease-in-out;
+  background-color: #dbab83;
+}
+header nav a:hover:after {
+  transform: scaleX(1);
 }
 header .fa-bars {
   position: absolute;

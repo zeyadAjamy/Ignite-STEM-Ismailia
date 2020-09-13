@@ -2,9 +2,9 @@ $(function() {
     'use strict'
     var scrollTopVal = $(document).scrollTop()
     var niceScrollControl, com, sidedNavBottom, scroll,
-        closeSubMen, toTop, sidednav, blogOpen;
+        closeSubMen, toTop, sidednav,vidInt=null, winWidth = $(window).width(), winHeight = $(window).height(), t=0;
+    $(".subMCont").css("height", winHeight);
 
-    $(".subMCont").css("height", $(window).height());
     ( niceScrollControl=(width)=>{
         if (width >= 800){
             $("body, .memCont").niceScroll({
@@ -87,8 +87,22 @@ $(function() {
             }
         }
     });
-
     
+    let openHackDetails = _=>{
+        $(".hackAll").show().css({height: "100vh", zIndex: "auto"});
+        $("#hackVid").css("z-index", "auto")
+        setTimeout(_=>{
+            $(".hackClose").fadeIn();
+            $(".hack .cont").fadeIn();
+        },1000)
+    }
+    let closeHackDetails = _=>{
+        $(".hackAll").show().css({height: "0px", zIndex: "-1"});
+        vidInt = setTimeout(_=>{
+            $(".hackClose").fadeOut();
+            $(".cont").fadeOut();
+        })
+    }
     $(document).scroll(_=>{
         let scrollValue = $(document).scrollTop()
         toTop(scrollValue)
@@ -100,7 +114,10 @@ $(function() {
         }
     });
     $(window).resize(_=>{
-        let winWidth = $(window).width()
+         winWidth = $(window).width()
+         winHeight = $(window).height()
+
+        $("#fluid_video_wrapper_hackVid").css({height:winHeight, width: winWidth})
         com(winWidth)
         niceScrollControl(winWidth)
         $(".subMCont").css("height", $(window).height());
@@ -113,7 +130,50 @@ $(function() {
     scroll(0)
     $("#sideHome").attr("class", "circleNav")
     $("#sidedContact, #sideAbout, #sideTeam").attr('class', "")
-    closeSubMen()
+    closeSubMen();
+    setTimeout(_=>{
+        $("#fluid_video_wrapper_hackVid").css({height:winHeight+18, width: winWidth})
+    },100)
+    vidInt = setInterval(function (){ 
+        let vid = document.getElementById("hackVid");
+        t = vid.currentTime;
+        if(t>61){
+            openHackDetails()
+        } else{
+            closeHackDetails();
+        }  
+    },500);
+    $("#hackClose").on("click", _=>{
+        clearInterval(vidInt)
+        $(".hack").css("display", "none")
+    })
+
+
+    // video
+    fluidPlayer(
+       'hackVid', {
+        "layoutControls": {
+            "controlBar": {
+                "autoHideTimeout": 3,
+                "animated": null,
+                "autoHide": null
+            },
+            "autoPlay": true,
+            "mute": false,
+            "allowTheatre": true,
+            "playPauseAnimation": false,
+            "playbackRateEnabled": false,
+            "allowDownload": false,
+            "playButtonShowing": false,
+            "fillToContainer": false,
+            "posterImage": ""
+        },
+        "vastOptions": {
+            "adList": [],
+            "adCTAText": false,
+            "adCTATextPosition": ""
+        }
+        })
     ////////////////////// Menu \\\\\\\\\\\\\\\\\\\\\\\
     $(".fa-bars").on("click", (event)=>{
         event.stopPropagation()
@@ -157,7 +217,6 @@ $(function() {
         },500)
     })
     $("#toAbout").on("click", _=>{
-        console.log(true)
         $("html, body").animate({ scrollTop: $(window).height() }, 700);
     })
     $("#sideHome, #homeMenu").on("click", _=>{
@@ -173,13 +232,12 @@ $(function() {
         scroll($(window).height()*2+$(".sec2").height()+65)
     })
     $(".fa-times").on("click", _=>{
-        $(".cont").fadeOut(400, _=>{
-            $(".subscribe").animate({"height": "0"}, 400)
+        $(".subscribe .cont").fadeOut(400, _=>{
+        $(".subscribe").animate({"height": "0"}, 400)
         })
     })
 
     $("#toTop").on("click", _=>{
-        console.log(true)
         $("html, body").animate({ scrollTop: 0 }, 1000);
     })
 
@@ -242,7 +300,6 @@ $(function() {
     });
     /////////////////// Blogs \\\\\\\\\\\\\\\\\\\\\
     $.getJSON("../js/blogs.json", function(data) {
-        
         for(let i in data){
             var html = 
                 `<div class="blogShowCont _${data[i].name}">
@@ -254,22 +311,19 @@ $(function() {
         }
     });
     /////////////////// Apply CountDown \\\\\\\\\\\\\\\\\\
-    $.getScript('js/countdown.js', function(){
-
-    });
+    $.getScript('js/countdown.js', function(){});
     com($(window).width())
     niceScrollControl($(window).width())
     sidedNavBottom(scrollTopVal)
     sidednav()
     toTop(scrollTopVal)
     setInterval(_=>{
-        //console.clear()
+        console.clear()
     }, 1000)
     docState()
 })
 function blogOpen(i){
     var that = `._${i}`
-    console.log($(that).css("height"))
     if($(that).css("height") == "450px"){
         $(that).siblings().css({
             height: "450px",
@@ -295,4 +349,5 @@ function blogOpen(i){
         }) 
         $(`${that} .more span`).text("Read More...")
     }
-}
+};
+
