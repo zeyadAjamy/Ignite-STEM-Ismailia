@@ -2,7 +2,8 @@ $(function() {
     'use strict'
     var scrollTopVal = $(document).scrollTop()
     var niceScrollControl, com, sidedNavBottom, scroll,
-        closeSubMen, toTop, sidednav,vidInt=null, winWidth = $(window).width(), winHeight = $(window).height(), t=0;
+        closeSubMen, toTop, sidednav,vidInt=null, winWidth = $(window).width(), winHeight = $(window).height(), t=0,
+        announceHeight= $(".announce").height();
     $(".subMCont").css("height", winHeight);
 
     ( niceScrollControl=(width)=>{
@@ -103,6 +104,20 @@ $(function() {
             $(".cont").fadeOut();
         })
     }
+    let openEvent= _=>{
+        $(".announce").css("height", announceHeight+20)
+        setTimeout(_=>{
+            $(".announce .time, .announce .all").fadeIn()
+
+        },1000)
+    }
+    let closeEvent= _=>{
+        $(".announce .time,.announce .all").fadeOut()
+        setTimeout(_=>{
+            $(".announce").animate({height: "0px"}, 400)
+        },400)
+    }
+
     $(document).scroll(_=>{
         let scrollValue = $(document).scrollTop()
         toTop(scrollValue)
@@ -114,9 +129,11 @@ $(function() {
         }
     });
     $(window).resize(_=>{
-         winWidth = $(window).width()
-         winHeight = $(window).height()
-
+        winWidth = $(window).width()
+        $(".announce").css({height: announceHeight+20})
+        announceHeight= $(".announce").height();
+        winHeight = $(window).height();
+        (winWidth <600)? $(".skewBg").removeAttr("style"): $(".skewBg").css({height: $(".announce").height()+50})
         $("#fluid_video_wrapper_hackVid").css({height:winHeight, width: winWidth})
         com(winWidth)
         niceScrollControl(winWidth)
@@ -129,8 +146,10 @@ $(function() {
     // Onload
     scroll(0)
     $("#sideHome").attr("class", "circleNav")
-    $("#sidedContact, #sideAbout, #sideTeam").attr('class', "")
+    $("#sidedContact, #sideAbout, #sideTeam").attr('class', "");
+    (winWidth <600)? $(".skewBg").removeAttr("style"): $(".skewBg").css({height: $(".announce").height()+50})
     closeSubMen();
+    $(".announce").animate({height: announceHeight+20}, 400)
     setTimeout(_=>{
         $("#fluid_video_wrapper_hackVid").css({height:winHeight+18, width: winWidth})
     },100)
@@ -148,7 +167,17 @@ $(function() {
         $(".hack").css("display", "none")
     })
 
-
+    // Events Controll
+    $("#evControll").on("click", function (){
+        let className = $(this).attr("class").replace("fa fa-chevron-", "")
+        if(className == "down"){
+            $(this).attr("class", "fa fa-chevron-up");
+            closeEvent();
+        }else{
+            $(this).attr("class", "fa fa-chevron-down");
+            openEvent();
+        }
+    })
     // video
     fluidPlayer(
        'hackVid', {
@@ -318,7 +347,7 @@ $(function() {
     sidednav()
     toTop(scrollTopVal)
     setInterval(_=>{
-        console.clear()
+        //console.clear()
     }, 1000)
     docState()
 })
@@ -350,4 +379,3 @@ function blogOpen(i){
         $(`${that} .more span`).text("Read More...")
     }
 };
-

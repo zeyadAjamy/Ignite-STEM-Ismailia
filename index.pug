@@ -112,11 +112,28 @@ html(lang ="en")
                 button(class="btn fa fa-times hackClose")#hackClose
                 .cont
                     img(src="img/logo.png" class="logo" title="Ignite Ismailia" alt="Ignite Ismailia's logo")
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan id sem at egestas. 
+                    p Ignite Ismailia STEM is an Ignite branch, our main slogan is "Metanoia" which means changing mind, from wrong beliefs to right one, don't hesitate to join one of our hackathons. 
                     .btn-group
                         a(class="btn btn-outline-dark" href="hack/Writing Hackathon.pdf" download) HACKATHON DETAILS #[i.fa.fa-download]
                         a(class="btn btn-dark" href="https://forms.gle/b5oSDVDbPqAcRVzj7") APPLY NOW  
-                
+                .partners
+                    h5 SPONSERS
+                    a(href="https://www.facebook.com/CurriculumVitaeSchools/" target="_blank") #[img(src="img/partner1.png").partnersLogo] 
+                    a(href="https://www.facebook.com/101515878078867?referrer=whatsapp" target="_blank") #[img(src="img/partner2.png").partnersLogo]
+
+        section.container-fluid.announce
+            i.fa.fa-chevron-down#evControll #[br]
+            .all
+                h3 WRITING HACKATHON
+                .btn-group
+                    a(class="btn btn-outline-light" href="hack/Writing Hackathon.pdf" download) DETAILS #[i.fa.fa-download]
+                    a(class="btn btn-light" href="https://forms.gle/b5oSDVDbPqAcRVzj7") APPLY  
+            .skewBg
+            .time    
+                h3#day 0
+                h3#hour 0
+                h3#min 0
+
         include includes/footer.pug
         script(src="js/jquery.js")
         script(src="js/jquery.vide.min.js")
